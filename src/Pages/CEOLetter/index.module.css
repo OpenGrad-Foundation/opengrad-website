@@ -1,0 +1,116 @@
+.page {
+  background-color: #fff;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #fff;
+  color: #000;
+  font-family: Arial, sans-serif;
+  width: 60%;
+  margin: 0 auto;
+  padding: 6rem 0 6rem 0;
+  min-height: 60vh;
+  padding-top: 140px; /* Account for fixed navbar */
+}
+
+.backLink {
+  color: #2769ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.imageContainer {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.ceoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.signature {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 3rem 1rem 3rem 1rem;
+    padding-top: 120px; /* Adjusted for mobile navbar */
+  }
+
+  .backLink {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .ceoImage {
+    margin-bottom: 0;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+
+  .content p {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 2rem 1rem 2rem 1rem;
+    padding-top: 100px; /* Further adjusted for smaller screens */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+}

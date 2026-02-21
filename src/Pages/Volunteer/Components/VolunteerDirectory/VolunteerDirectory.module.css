@@ -1,0 +1,92 @@
+.VolunteerDirectory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0px 5vw 20px;
+  width: 100%;
+}
+.VolunteerDirectory .btnWrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.VolunteerDirectory .btnWrapper p {
+  background-color: #05b570;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 300px;
+  width: 100%;
+  line-height: 1.7;
+  border-radius: 8px;
+}
+
+.VolunteerDirectory .btnWrapper div {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #05b570;
+  gap: 5px;
+  border-radius: 8px;
+}
+
+.VolunteerDirectory .btnWrapper div input {
+  background-color: transparent;
+  width: 100%;
+  color: black;
+  border: none;
+  outline: none;
+}
+.VolunteerDirectory > .imageContainer {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.VolunteerDirectory .buttonwrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.VolunteerDirectory .buttonwrap div {
+  height: 0.7px;
+  width: 100%;
+  background-color: #82dab7;
+}
+.VolunteerDirectory button {
+  background-color: transparent;
+  color: rgba(5, 181, 112, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 1200px) {
+  .VolunteerDirectory > .imageContainer {
+    justify-content: center;
+  }
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

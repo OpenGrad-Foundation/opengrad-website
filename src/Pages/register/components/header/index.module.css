@@ -1,0 +1,283 @@
+.HeaderWrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  height: fit-content;
+  padding: 100px 0px 50px;
+  width: 100%;
+  background: url("../../../assets/backgroundLinesClouds.png") center
+    center/cover no-repeat;
+  position: relative;
+}
+.HeaderWrapper .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+.HeaderWrapper .BackgroundText h1 {
+  font-size: 13vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top: 50px;
+  font-weight: 900;
+}
+.HeaderWrapper .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 8vh 5vw 0px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+
+.HeaderWrapper .DetailWrapper > .Content {
+  width: calc(100%);
+  height: calc(100% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  min-width: 300px;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 8px 3px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .HeaderWrapper .DetailWrapper {
+    flex-direction: column;
+    padding: 8vh 10vw 0px;
+  }
+  .HeaderWrapper .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HeaderWrapper {
+    padding: 100px 0px 30px;
+  }
+  .HeaderWrapper .DetailWrapper {
+    padding: 8vh 5vw;
+    gap: 20px;
+  }
+
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+}
+
+.forms {
+  background-color: white;
+  max-width: 80vw;
+  margin: 100px auto;
+  width: 100%;
+
+  border-radius: 20px;
+  border: 1px solid var(--Secondary, #05b570);
+  background: #fff;
+  box-shadow: 0px 64.803px 90.724px -12.961px rgba(34, 34, 34, 0.05);
+  padding: 8vh 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+.inputbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.inputbox > div {
+  width: 100%;
+  display: flex;
+  gap: 20px 5%;
+  justify-content: space-between;
+}
+
+.inputbox > div > div {
+  width: calc(50% - 2.5%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+.inputbox > div > div input {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--Black-1, #cfd3d4);
+  color: black;
+  padding: 15px;
+}
+
+.select > div {
+  border-radius: 8px;
+  padding: 8px;
+  border-color: #cfd3d4;
+}
+@media screen and (max-width: 740px) {
+  .inputbox > div {
+    flex-direction: column;
+    width: 100%;
+  }
+  .inputbox > div > div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .forms {
+    margin: 0px auto 40px;
+    max-width: 85vw;
+  }
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  gap: 10px;
+}
+.checkbox > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+.checkbox > div > div {
+  width: calc(50% - 2.5%);
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+.checkbox > div > div input {
+  margin-top: 5px;
+}
+.HeaderWrapper label{
+  display: flex;
+  align-items: center;
+}
+.HeaderWrapper label span{
+  color: red;
+  font-size: 30px;
+}
+@media screen and (max-width: 880px) {
+  .checkbox > div {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .checkbox > div > div {
+    width: 100%;
+    font-size: 16px;
+    align-items: center;
+  }
+}
+.togglewrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.togglewrap span {
+  text-align: left;
+}
+.Toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.Toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ToggleButton {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.Toggle input:checked + .ToggleButton {
+  background-color: #05b57080;
+}
+
+.ToggleButton:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #05b570;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.Toggle input:checked + .ToggleButton:before {
+  transform: translateX(26px);
+}
+
+.error {
+  color: red;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.btn button {
+  padding: 10px 25px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn button:nth-child(1) {
+  background: #00272d;
+}
+.btn button:nth-child(2) {
+  background: #05b570;
+}

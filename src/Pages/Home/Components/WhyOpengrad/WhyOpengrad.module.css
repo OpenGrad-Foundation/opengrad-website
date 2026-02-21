@@ -1,0 +1,55 @@
+.WhyOpengradWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10vh;
+  padding: 0px 5vw;
+  background: url("./background.png") left top/cover no-repeat;
+}
+.WhyOpengradWrapper > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.WhyOpengradWrapper .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+@media screen and (max-width: 900px) {
+  .WhyOpengradWrapper > div {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+    .WhyOpengradWrapper{
+      gap: 40px;
+    }
+  .WhyOpengradWrapper > div {
+    flex-direction: column;
+  }
+  .WhyOpengradWrapper > div > svg {
+    transform: rotate(90deg);
+  }
+}

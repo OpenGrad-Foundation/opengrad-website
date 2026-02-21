@@ -1,0 +1,344 @@
+.StudentJourneyWrapper {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  background-color: #fff;
+}
+
+.LeftColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.JourneyStep {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.JourneyStep:hover {
+  /* background-color: rgba(0, 61, 61, 0.05); */
+}
+
+.JourneyStep.active .StepText {
+  /* color: #05B570; */
+}
+
+.StepContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.StepIcon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #003d3d;
+}
+
+.StepText {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003d3d;
+  white-space: normal;
+  flex: 1;
+  text-align: left;
+}
+
+.StepIndicator {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  position: relative;
+  padding-right: 20px;
+}
+
+.HorizontalLine {
+  height: 3px;
+  background-color: #000;
+  flex: 1;
+  border-radius: 3px;
+}
+
+.SlantedLine {
+  width: 50px;
+  height: 3px;
+  background-color: #000;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+  margin-left: -1.5px;
+  border-radius: 3px;
+}
+
+.NumberCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #0abe62;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  right: 0;
+  bottom: 28px;
+}
+
+.RightColumn {
+  flex: 1.5;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  min-width: 0;
+}
+
+.SliderContainer {
+  width: 100%;
+  height: 580px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: #fff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SliderContainer :global(.swiper) {
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.SliderContainer :global(.swiper-slide) {
+  width: 100%;
+  height: 100%;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.Pagination :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: #d1d1d1;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.Pagination :global(.swiper-pagination-bullet-active) {
+  background: #003d3d;
+}
+
+.SlideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CustomPrev {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-weight: bold;
+  color: #003d3d;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+  user-select: none;
+}
+
+.CustomPrev:active {
+  transform: translateY(-50%);
+}
+
+.CustomNext {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-weight: bold;
+  color: #003d3d;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+  user-select: none;
+}
+
+.CustomNext:active {
+  transform: translateY(-50%);
+}
+
+.Title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #003d3d;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .StudentJourneyWrapper {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .LeftColumn {
+    width: 100%;
+    align-items: center;
+  }
+
+  .JourneyStep {
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .StepContent {
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+  }
+
+  .StepText {
+    font-size: 20px;
+    white-space: normal;
+    text-align: left;
+    word-break: break-word;
+    margin-left: 0;
+    flex: 1;
+  }
+
+  .StepIcon {
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+
+  .StepIcon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .StepIndicator {
+    width: 100%;
+    max-width: 400px;
+    padding-right: 10px;
+    margin-top: -5px;
+  }
+
+  .HorizontalLine {
+    height: 2px;
+  }
+
+  .SlantedLine {
+    width: 40px;
+    height: 2px;
+  }
+
+  .NumberCircle {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    bottom: 20px;
+  }
+
+  .RightColumn {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .SliderContainer {
+    height: 400px;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    padding-bottom: 40px;
+  }
+
+  .SlideImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .CustomPrev, .CustomNext {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .Title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .StepText {
+    font-size: 18px;
+  }
+
+  .SliderContainer {
+    height: 300px;
+  }
+
+  .SlideImage {
+    height: 100%;
+  }
+
+  .SliderContainer :global(.swiper-button-next),
+  .SliderContainer :global(.swiper-button-prev) {
+    --swiper-navigation-size: 24px;
+  }
+}

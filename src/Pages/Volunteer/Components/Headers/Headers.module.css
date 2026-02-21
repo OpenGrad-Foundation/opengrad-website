@@ -1,0 +1,200 @@
+.HeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 100px 0px 50px;
+  width: 100%;
+  background: url("../../../assets/backgroundLinesClouds.png") center
+    center/cover no-repeat;
+  position: relative;
+}
+.HeaderWrapper .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+.HeaderWrapper .BackgroundText h1 {
+  font-size: 25.5vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top: 50px;
+  font-weight: 900;
+}
+.HeaderWrapper .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 0px 5vw 0px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+
+.HeaderWrapper .DetailWrapper > .Content {
+  width: calc(100%);
+  height: calc(100% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  min-width: 300px;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 0px 3px;
+}
+.HeaderWrapper .DetailWrapper > .Content h2 {
+  font-size: 4vw;
+  line-height: 1.1;
+  color: #034852;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+.HeaderWrapper .DetailWrapper > .Content h2 div {
+  color: #05b570;
+  border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+  height: 4vw;
+}
+.HeaderWrapper .DetailWrapper > .Content > div > p {
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: justify;
+  font-weight: 500;
+  
+}
+.HeaderWrapper .DetailWrapper > .Content .ButtonWrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.HeaderWrapper .DetailWrapper > .Content .ButtonWrapper button{
+  background-color: transparent;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+.HeaderWrapper .DetailWrapper > .Content >.ButtonWrapper .join{
+  background-color: #00272D;
+  color: white;
+}
+.HeaderWrapper .DetailWrapper .MapWrapper {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: calc(50% - 20px);
+  height: calc(100% - 0px);
+  pointer-events: none;
+  gap: 10px;
+  max-width: 600px;
+}
+.HeaderWrapper .DetailWrapper .MapWrapper img{
+    object-fit: cover;
+    height: 20vh;
+}
+.HeaderWrapper .DetailWrapper .MapWrapper :nth-child(1) {
+   width: calc(100% / 2 - 5px);
+}
+.HeaderWrapper .DetailWrapper .MapWrapper :nth-child(2) {
+  width: calc(100% / 2 - 5px);
+ 
+}
+.HeaderWrapper .DetailWrapper .MapWrapper :nth-child(3) {
+  width: calc(100%);
+  height: 35vh;
+}
+.HeaderWrapper .DetailWrapper .MapWrapper :nth-child(4) {
+ width: calc(100% / 2 - 5px);
+}
+.HeaderWrapper .DetailWrapper .MapWrapper :nth-child(5) {
+ width: calc(100% / 2 - 5px);
+}
+@media screen and (max-width: 1600px){
+  .HeaderWrapper .DetailWrapper > .Content h2{
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .HeaderWrapper .DetailWrapper {
+    flex-direction: column;
+    padding: 0px 10vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+  .HeaderWrapper .DetailWrapper .MapWrapper {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailWrapper > div img {
+    object-fit: contain;
+    max-height: 400px;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 {
+    font-size: 6.5vw;
+    line-height: 1.1;
+    max-width: 750px;
+
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 div {
+    border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+    height: 6vw;
+  }
+   .HeaderWrapper .DetailWrapper > .Content > div > p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HeaderWrapper {
+    padding: 100px 0px 30px;
+  }
+  .HeaderWrapper .DetailWrapper {
+    padding: 0px 5vw;
+    gap: 20px;
+  }
+
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 {
+    font-size: 7.8vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 div {
+    border-bottom: 1.5vw solid rgba(3, 72, 82, 0.1);
+    height: 7.6vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content > div > p {
+    font-size: 16px;
+  }
+}
+
+.noWrap {
+  white-space: nowrap;
+}

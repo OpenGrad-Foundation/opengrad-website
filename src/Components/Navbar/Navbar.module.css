@@ -1,0 +1,166 @@
+.navbarWrapper {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 5vw 20px;
+  z-index: 9990;
+  backdrop-filter: blur(8px);
+  top: 0;
+  background-color: white;
+}
+.navbarWrapper > div {
+  width: fit-content;
+}
+.navbarLeft {
+  width: fit-content;
+  background-color: transparent;
+}
+.navbarLeft img {
+  width: 180px;
+}
+.navbarRight > div {
+  display: flex;
+  gap: 4vw;
+}
+.navbarRight > div > a > p {
+  text-transform: capitalize;
+}
+.navbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.navbarWrapper .StudyButton,
+.navbarWrapper .navbarMobile > .StudyButton {
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #00272d;
+  font-weight: 600;
+  margin: 0;
+  border: none;
+}
+.navbarWrapper .StudyButton a {
+  color: white;
+  font-weight: 500;
+}
+
+.navbarMobile {
+  display: none;
+}
+.navbarMobile .menuMd {
+  background-color: transparent;
+  color: black;
+  font-size: 25px;
+}
+.navbarMobile > div {
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 9900;
+  backdrop-filter: blur(8px);
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0vw;
+  top: 0;
+  gap: 5px;
+  height: calc(100vh);
+  width: 100%;
+  justify-content: space-around;
+  padding: 20px;
+}
+.navbarMobile > div > a > p {
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.navbarMobile > div > button > a {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.navbarWrapper a {
+  text-decoration: none;
+}
+.dropdownWrapper {
+  position: relative;
+}
+.dropdownMenu {
+  background: #f8fafb;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 18px rgba(0, 39, 45, 0.08);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 210px;
+  min-width: 170px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 0;
+}
+
+.dropdownMenu a {
+  color: #00272d;
+  padding: 10px 18px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+  text-align: left;
+  background: none;
+}
+
+.dropdownMenu a:hover {
+  background: #e6f7f1;
+  color: #05b570;
+}
+
+.navbarMobile .dropdownMenu {
+  position: static;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  justify-self: center;
+  margin-top: 10px;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbarMobile .dropdownMenu a {
+  color: #696969;
+  background: none;
+  padding: 8px 0;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 0;
+  width: 100%;
+  text-align: center;
+}
+@media screen and (max-width: 1250px) {
+  .navbarRight {
+    display: none;
+  }
+  .navbarMobile {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+  }
+  .navbarWrapper > .StudyButton {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .navbarWrapper {
+    padding: 20px 5vw 15px;
+  }
+}

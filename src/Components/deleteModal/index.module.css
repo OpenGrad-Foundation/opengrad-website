@@ -1,0 +1,23 @@
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.Wrapper>div{
+    display: flex;
+    gap: 20px;
+}
+
+.Wrapper>div button{
+    background-color:#00272D ;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+}

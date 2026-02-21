@@ -1,0 +1,92 @@
+.Container {
+  padding: 80px 10%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.VoicesWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.VoiceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.QuoteIcon {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.QuoteText {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a4a4a;
+  font-weight: 400;
+  margin: 0;
+  flex: 1;
+}
+
+.AuthorInfo {
+  margin-top: auto;
+}
+
+.AuthorName {
+  font-size: 22px;
+  font-weight: 700;
+  color: #034852;
+  margin: 0;
+}
+
+.AuthorDesignation {
+  font-size: 18px;
+  font-weight: 600;
+  color: #034852;
+  margin: 4px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1100px) {
+  .Container {
+    padding: 60px 5%;
+  }
+  .VoicesWrapper {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .VoicesWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .Container {
+    padding: 40px 20px;
+  }
+  .VoicesWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .QuoteText {
+    font-size: 16px;
+  }
+  .AuthorName {
+    font-size: 20px;
+  }
+  .AuthorDesignation {
+    font-size: 16px;
+  }
+}

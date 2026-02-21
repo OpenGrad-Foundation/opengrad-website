@@ -1,0 +1,349 @@
+.wrapper {
+  width: 100%;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 100px 5vw 50px;
+  width: 100%;
+  background: url("../../../assets/backgroundLines.png") center top/contain
+    no-repeat;
+  position: relative;
+  overflow: hidden;
+  gap: 5vh;
+}
+
+.inner .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.inner .BackgroundText h1 {
+  font-size: 13vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top: 8vh;
+  font-weight: 900;
+  text-wrap: nowrap;
+}
+.inner .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 8vh 0vw 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+
+.inner .DetailWrapper > .Content {
+  width: calc(100%);
+  height: calc(100% - 0px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  min-width: 300px;
+  z-index: 110;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inner .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.inner .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 8px 3px;
+  line-height: 1;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+.buttonGroup button {
+  text-align: justify;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--Primary, #034852);
+  color: #034852;
+  background-color: transparent;
+}
+
+.buttonGroup button.activeButton {
+  background: var(--Primary, #034852);
+  color: #fff;
+}
+.categoryWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+}
+.categoryWrapper button {
+  border: 1px solid #82dab7;
+  background: #fff;
+  padding: 15px 20px;
+  z-index: 100;
+  width: 100%;
+  color: #034852;
+  font-size: 22px;
+  font-weight: 700;
+  min-width: fit-content;
+  max-width: 300px;
+}
+.categoryWrapper button.activeButton {
+  background: url("../../../newsletterAndReports/assets/bg.webp") center
+    center/cover no-repeat;
+  color: white;
+  border: 1px solid #05b570;
+}
+
+.inner p {
+  color: #1f1f1f;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  line-height: normal;
+}
+.languageWrapper {
+  display: flex;
+  border-bottom: 1px solid #05b57080;
+  z-index: 799;
+  overflow-x: auto;
+}
+.languageWrapper > div {
+  display: flex;
+  flex-direction: column;
+}
+.languageWrapper button {
+  color: #888;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.36px;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+.languageWrapper button.activeButton {
+  color: var(--Primary, #034852);
+  font-weight: 600;
+}
+.languageWrapper .lineBottom {
+  height: 4px;
+  width: 100%;
+  background-color: var(--Primary, #034852);
+  border-radius: 8px;
+  margin-bottom: -2px;
+}
+.cardWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.imageWrapper {
+  overflow: auto;
+}
+.imageWrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  max-width: 550px;
+  max-height: 320px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.customButton {
+  z-index: 10;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 4px solid #fff;
+  background: #034852;
+}
+
+.customButton:hover {
+  background: #034852;
+  opacity: 0.8;
+}
+
+.imageWrapper > div button:nth-child(1) {
+  margin-right: -20px;
+}
+.imageWrapper > div button:nth-child(3) {
+  margin-left: -20px;
+}
+.imageWrapper p {
+  float: none;
+  width: 100%;
+  color: #000000;
+  text-align: justify;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.graphWrapper {
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.graphWrapper img {
+  width: calc(50% - 1.5vw);
+  height: 100%;
+  object-fit: cover;
+}
+.upcomingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.upcomingWrapper .marquee {
+  background: rgba(5, 181, 112, 0.1);
+  padding: 20px 0px;
+  width: 100vw;
+  margin-left: -5vw;
+}
+.upcomingWrapper p {
+  color: var(--Medium-grey, #6d6e76);
+  text-align: justify;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.upcomingWrapper p b {
+  color: #111;
+  font-weight: 700;
+}
+
+.buttonNavigate {
+  border-radius: 8px;
+  background: #00272d;
+  padding: 15px 35px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .inner .BackgroundText h1 {
+    margin-top: 11vh;
+    font-size: 25vw;
+  }
+  .inner .DetailWrapper {
+    flex-direction: column;
+    padding: 8vh 0vw 0px;
+  }
+  .inner .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .inner .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+  .imageWrapper p {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .imageWrapper > div {
+    max-width: 100%;
+    max-height: none;
+    height: 50vh;
+    margin-right: 0px;
+  }
+  .upcomingWrapper p {
+    font-size: 19px;
+  }
+  .imageWrapper p {
+    font-size: 17px;
+  }
+  .buttonNavigate {
+    padding: 15px 35px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .categoryWrapper button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .graphWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .graphWrapper img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .inner {
+    padding: 80px 5vw 30px;
+  }
+  .inner .DetailWrapper {
+    padding: 8vh 5vw 20px;
+    gap: 20px;
+  }
+
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+  .imageWrapper > div {
+    height: 40vh;
+  }
+  .upcomingWrapper p {
+    font-size: 17px;
+  }
+}

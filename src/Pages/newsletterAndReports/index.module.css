@@ -1,0 +1,226 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 100px 0px 50px;
+  width: 100%;
+  background: url("../assets/backgroundLines.png") center center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  gap: 5vh;
+}
+.inner .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+.inner .BackgroundText h1 {
+  font-size: 13vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top: 8vh;
+  font-weight: 900;
+  text-wrap: nowrap;
+}
+.inner .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 8vh 5vw 0px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+
+.inner .DetailWrapper > .Content {
+  width: calc(100%);
+  height: calc(100% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  min-width: 300px;
+}
+.inner .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.inner .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 8px 3px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner .BackgroundText h1 {
+    margin-top: 11vh;
+    font-size: 25vw;
+  }
+  .inner .DetailWrapper {
+    flex-direction: column;
+    padding: 8vh 10vw 0px;
+  }
+  .inner .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .inner .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .inner {
+    padding: 80px 0px 30px;
+  }
+  .inner .DetailWrapper {
+    padding: 8vh 5vw 20px;
+    gap: 20px;
+  }
+
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+}
+
+.newsletters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 5vw 6vh;
+}
+
+.newsletters h1,
+.anualreports h1 {
+  margin-bottom: 30px;
+}
+.yearSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 950px;
+}
+
+.yearHeader {
+  width: 100%;
+  border: 1px solid #82dab7;
+  padding: 20px;
+  color: var(--Primary, #034852);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.yearHeader:hover {
+  background: #f0fbf6;
+}
+
+.yearHeader > div.rotated {
+  transform: rotate(180deg);
+}
+.gridSection {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  gap: 0px;
+  border: 1px solid #82dab7;
+}
+
+.gridSection > a {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: var(--Primary, #034852);
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-width: 150px;
+  border: 1px solid #82dab7;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.gridSection > a:hover {
+  color: white;
+  background: url("./assets/bg.webp") center center/cover no-repeat;
+  border: none;
+  margin-right: -1.5px;
+}
+.anualreports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 5vw 6vh;
+}
+.anualreports .gridSection {
+  max-width: 950px;
+  gap: 3vw;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.anualreports .gridItem {
+  display: flex;
+  flex-direction: column;
+  border: 1.884px solid #05b570;
+  width: calc(50% - 1.5vw);
+}
+
+.anualreports .gridItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.anualreports .gridSection a {
+  color: #fff;
+  background: var(--Secondary, #05b570);
+  width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-width: 150px;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.anualreports .gridSection a:hover {
+  background-image: none;
+}
+@media screen and (max-width: 670px) {
+  .anualreports .gridItem {
+    width: 100%;
+  }
+  .gridSection > div {
+    font-size: 18px;
+  }
+
+  .anualreports .gridSection {
+    gap: 20px;
+  }
+}

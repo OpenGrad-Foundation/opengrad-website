@@ -1,0 +1,148 @@
+.VolunteerStoriesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5vh 5vw 0px;
+  width: 100%;
+}
+.VolunteerStoriesWrapper .SwiperSlide {
+  width: calc(100% / 2 - 20px);
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer {
+  background: url("./assets/background.png") center center/cover no-repeat;
+  display: flex;
+  padding-left: 5%;
+  height: 280px;
+  align-items: end;
+  width: 100%;
+  margin: 0px 10px;
+  justify-content: space-between;
+  gap: 0;
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details {
+  width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 18px;
+  gap: 5px;
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper {
+  display: flex;
+  text-align: left;
+  gap: 20px;
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper svg {
+  flex-shrink: 0;
+  width: 110px;
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper p {
+  margin-right: -10px;
+}
+.VolunteerStoriesWrapper .SwiperSlide img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+.VolunteerStoriesWrapper .SwiperSlide .IndividualContainer img {
+  height: 280px;
+}
+
+@media screen and (max-width: 1000px) {
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer {
+    margin: 0;
+    max-width: 700px;
+    height: 220px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details {
+    width: calc(100% - 150px);
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer img {
+    height: 200px;
+  }
+  .VolunteerStoriesWrapper
+    .SwiperSlide
+    .IndividualContainer
+    .Details
+    .Toper
+    svg {
+    width: 90px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer h2 {
+    font-size: 23px;
+    margin-bottom: -10px;
+   
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper p {
+    font-size: 16px;
+    line-height: 1.3;
+    margin-right: -30px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper {
+    align-items: center;
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+    .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer {
+   
+    height: 200px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details {
+    width: calc(100% - 120px);
+  }
+  .VolunteerStoriesWrapper
+    .SwiperSlide
+    .IndividualContainer
+    .Details
+    .Toper
+    svg {
+    width: 70px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper {
+    align-items: center;
+    gap: 10px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer h2 {
+    font-size: 20px;
+    margin-bottom: -8px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer > div > div p {
+    font-size: 15px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper p {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-right: -30px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer img {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .VolunteerStoriesWrapper
+    .SwiperSlide
+    .IndividualContainer
+    .Details
+    .Toper
+    svg {
+    width: 60px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer .Details .Toper p {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-right: -35px;
+  }
+  .VolunteerStoriesWrapper .SwiperSlide .IndividualContainer img {
+    height: 120px;
+  }
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,0 +1,59 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.Wrapper > button {
+  background-color: #00272d;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ModalContent button {
+  background-color: #00272d;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.ModalContent form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.ModalContent form > div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 500px;
+  width: 100%;
+}
+
+.ModalContent form > div input{
+    padding: 12px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    border: 1px solid #222;
+    color: black;
+}
+
+.ModalContent form .FormActions{
+    flex-direction: row;
+    gap: 20px;
+}

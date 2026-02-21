@@ -1,0 +1,66 @@
+.wrapper {
+  width: 100%;
+  padding: 0px 5vw 6vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.paragraph {
+  font-size: 20px;
+  line-height: 1.3;
+}
+.iterator {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0px 3vw;
+  align-items: center;
+}
+
+.iterator .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  line-height: 1;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+@media screen and (max-width: 900px) {
+  .paragraph {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .iterator {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+    .paragraph{
+    font-size: 16px;
+    line-height: 1.3;
+}
+  .iterator {
+    flex-direction: column;
+  }
+  .iterator > svg {
+    transform: rotate(90deg);
+  }
+}

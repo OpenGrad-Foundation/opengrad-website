@@ -1,0 +1,118 @@
+.modalOverlay {
+  position: absolute;
+  background-color: rgba(3, 72, 82, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 6vh 5vw;
+  border-radius: 8px;
+}
+
+.modalOverlay button {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.modalOverlay h2 {
+  color: #fff;
+}
+.modalOverlay form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 20px;
+}
+.modalOverlay form > div {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+}
+.modalOverlay form > div label {
+  width: 115px;
+  color: white;
+  font-weight: 500;
+}
+.modalOverlay form > div input {
+  background-color: white;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  height: fit-content;
+}
+.modalOverlay form > div >.extraimage{
+height: 40px;
+}
+.modalOverlay form > div textarea {
+  background-color: white;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  min-height: 100px;
+}
+
+.modalOverlay form > .cateoriessection > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: fit-content;
+  width: calc(100% - 120px);
+  gap: 15px;
+}
+.modalOverlay form > .cateoriessection > div .innercheckbox {
+  display: flex;
+  text-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalOverlay form > .cateoriessection input[type="checkbox"] {
+  /* ...existing styles */
+  display: grid;
+  place-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.modalOverlay form > .cateoriessection input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.modalOverlay form > .cateoriessection input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.modalOverlay form > .buttonWrappers {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.modalOverlay form button {
+  width: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+  .modalOverlay form > div {
+    flex-direction: column;
+  }
+  .modalOverlay form > .cateoriessection > div {
+    width: 100%;
+    flex-direction: column;
+  }
+
+}

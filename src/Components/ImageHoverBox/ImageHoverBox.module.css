@@ -1,0 +1,75 @@
+.ImageHoverBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  height: 420px;
+}
+.ImageHoverBoxWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  height: 220px;
+}
+
+.ImageHoverBoxWrap .FrontDiv {
+  background-color: #ededed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 500;
+  display: flex;
+}
+.ImageHoverBoxWrap .FrontDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border: none;
+}
+.ImageHoverBoxWrap .BackDiv {
+  height: 100%;
+  width: 100%;
+  background-color: #034852;
+}
+
+.ImageHoverBoxWrap:hover .BackDiv {
+  margin-bottom: -20px;
+  margin-right: -20px;
+}
+
+.ImageHoverBoxWrap:hover .FrontDiv img {
+  filter: grayscale(0%);
+}
+
+.ImageHoverBoxWrapper .Content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+.ImageHoverBoxWrapper .Content h2 {
+  color: #034852;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.ImageHoverBoxWrapper .Content h3 {
+  color: #05B570;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.ImageHoverBoxWrapper .Content.secondary h2 {
+  color: #07ff9e;
+}
+
+.ImageHoverBoxWrapper .Content.secondary h3 {
+  color: #034852;
+}

@@ -1,0 +1,194 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.Content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Internal scroll if content overflows */
+  position: relative;
+}
+
+.Content h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 24px;
+  color: #333333;
+}
+
+.Content input,
+.Content select {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.Content label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.Content button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  align-self: center;
+}
+
+.Content button:first-of-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+.Content button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fafafa;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: border 0.3s ease;
+}
+
+.dropzone:hover {
+  border-color: #666666;
+}
+
+.dropzone p {
+  margin: 0;
+  color: #666666;
+}
+
+.Dropzone {
+  margin-top: 10px;
+  padding: 20px;
+  border: 2px dashed #cccccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #777777;
+}
+
+.UploadedImages {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.UploadedImages img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.UploadedImages button {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.previewContainer {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.multiplePreviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.imagePreview {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ff4444;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 1);
+  color: #ff0000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .Content {
+    width: 90%;
+    height: 90%;
+    padding: 15px;
+  }
+
+  .Content h2 {
+    font-size: 20px;
+  }
+
+  .Content input,
+  .Content select {
+    font-size: 14px;
+  }
+
+  .Content button {
+    font-size: 14px;
+  }
+}

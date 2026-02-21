@@ -1,0 +1,117 @@
+.FooterWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  padding: 0px 5vw 25px;
+  gap: 20px;
+}
+
+.FooterWrapper .TopSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.FooterWrapper .TopSection img {
+  width: 200px;
+}
+
+.FooterWrapper .TopSection p {
+  color: #656565;
+  line-height: 1.3;
+  font-size: 14px;
+  max-width: 310px;
+}
+.TopSection a {
+  color: #034852;
+}
+.FooterWrapper .iconFill {
+  display: none;
+}
+
+.FooterWrapper .iconLink:hover .iconFill {
+  display: inline;
+}
+
+.FooterWrapper .iconLink:hover .iconDefault {
+  display: none;
+}
+
+.FooterWrapper .BottomSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0vw 0px;
+  gap: 20px;
+}
+
+.FooterWrapper .BottomSection .left {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.FooterWrapper .BottomSection .left a {
+  text-decoration: none;
+  color: #656565;
+  font-size: 16px;
+}
+.FooterWrapper .BottomSection .left a:hover {
+  color: #034852;
+}
+.FooterWrapper .BottomSection .Social {
+  display: flex;
+  gap: 30px;
+}
+.FooterWrapper .BottomSection > p {
+  color: #656565;
+  width: 100%;
+  text-align: right;
+}
+
+.Copyright {
+  color: #034852;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+@media screen and (max-width: 1350px) {
+  .FooterWrapper .BottomSection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .FooterWrapper .BottomSection > p,
+  .FooterWrapper .BottomSection .left {
+    width: fit-content;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 950px) {
+  .FooterWrapper .BottomSection > p {
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .FooterWrapper .BottomSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .FooterWrapper .TopSection p {
+    font-size: 15px;
+  }
+  .FooterWrapper .BottomSection .left {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 50px;
+    margin-bottom: 15px;
+  }
+  .FooterWrapper .BottomSection .left a {
+    font-size: 15px;
+  }
+}

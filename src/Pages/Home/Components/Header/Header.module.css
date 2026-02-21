@@ -1,0 +1,208 @@
+.HeaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 100px 0px 50px;
+  width: 100%;
+  background: url("../../../assets/backgroundLinesClouds.png") center
+    center/cover no-repeat;
+}
+.HeaderWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.HeaderWrapper .DetailSection {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 0px 20px 0px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper {
+  width: 55%;
+  height: calc(100% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25px;
+  min-width: 300px;
+}
+
+.HeaderWrapper .DetailSection > .ContentWrapper .Title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+  width: 100%;
+}
+.Title .registerbutton {
+  display: flex;
+  width: fit-content;
+  border-radius: 10px;
+  border: 1.612px solid var(--Secondary, #05b570);
+  padding: 12px 0px 12px 15px;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  background-color: white;
+}
+
+.Title .registerbutton div {
+  display: flex;
+  align-items: center;
+}
+
+.Title .registerbutton button {
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.Title .registerbutton p {
+  max-width: 100% !important;
+  font-size: 20px !important;
+}
+
+.Title .registerbutton .hint span {
+  position: absolute;
+  display: none;
+  max-width: 480px;
+  min-width: 330px;
+  width: 100%;
+  right: 0;
+  top: -110px;
+  background: url("./message.png") center center/cover no-repeat;
+  padding: 10px;
+  font-size: 14px;
+  color: #000000;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.Title .registerbutton .hint:hover .tooltipcontent {
+  display: flex;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper .Title h2 {
+  font-size: 4vw;
+  line-height: 1.1;
+  color: #034852;
+  display: flex;
+  flex-wrap: wrap;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper .Title h2 div {
+  color: #05b570;
+  border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+  height: 4vw;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper .Title > div > p {
+  font-size: 24px;
+  line-height: 1.2;
+  max-width: 420px;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper .ButtonWrapper {
+  display: flex;
+  align-items: center;
+}
+.HeaderWrapper .DetailSection > .ContentWrapper .ButtonWrapper button {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  color: #000000;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.HeaderWrapper .DetailSection .MapWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+  width: 45%;
+  height: calc(100% - 0px);
+  pointer-events: none;
+}
+.HeaderWrapper .DetailSection > div img {
+  height: 95%;
+  width: 100%;
+  min-width: 300px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .HeaderWrapper .DetailSection {
+    flex-direction: column-reverse;
+    padding: 0px 10vw;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailSection .MapWrapper {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailSection > div img {
+    object-fit: contain;
+    max-height: 400px;
+  }
+  .Title .registerbutton p {
+    font-size: 16px !important;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper .Title h2 {
+    font-size: 6.2vw;
+    line-height: 1.1;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper .Title h2 div {
+    border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+    height: 6vw;
+  }
+    .HeaderWrapper .DetailSection > .ContentWrapper .Title > div > p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HeaderWrapper {
+    padding: 50px 0px 0px;
+  }
+  .HeaderWrapper .DetailSection {
+    padding: 0px 5vw;
+    gap: 5vh;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper .Title h2 {
+    font-size: 7.5vw;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper .Title h2 div {
+    border-bottom: 1.5vw solid rgba(3, 72, 82, 0.1);
+    height: 7.6vw;
+  }
+  .HeaderWrapper .DetailSection > .ContentWrapper .Title > div > p {
+    font-size: 16px;
+  }
+  .Title .registerbutton {
+    padding: 8px 10px;
+  }
+  .Title .registerbutton button {
+    font-size: 14px;
+  }
+  .Title .registerbutton p{
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Title .registerbutton p {
+    font-size: 14px !important;
+  }
+}

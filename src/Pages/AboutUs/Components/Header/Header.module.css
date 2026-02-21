@@ -1,0 +1,200 @@
+.HeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 100px 0px 50px;
+  width: 100%;
+  background: url("../../../assets/backgroundLinesClouds.png") center
+    center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.HeaderWrapper .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+.HeaderWrapper .BackgroundText h1 {
+  font-size: 19vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top:50px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.HeaderWrapper .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 0px 3vw 0px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.HeaderWrapper .DetailWrapper > .Content {
+  width: 50%;
+  height: calc(100% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  min-width: 280px;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.HeaderWrapper .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 0px 3px;
+}
+.HeaderWrapper .DetailWrapper > .Content h2 {
+  font-size: 4vw;
+  line-height: 1.1;
+  color: #034852;
+  display: flex;
+  flex-wrap: wrap;
+}
+.HeaderWrapper .DetailWrapper > .Content h2 div {
+  color: #05b570;
+  border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+  height: 4vw;
+}
+.HeaderWrapper .DetailWrapper > .Content > div > p {
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.HeaderWrapper .DetailWrapper .MapWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.HeaderWrapper .DetailWrapper .MapWrapper img {
+  height: auto;
+  width: 100%;
+}
+.HeaderWrapper .VisionWrap {
+  display: flex;
+  align-items: center;
+  padding: 20px 5vw;
+  text-align: left;
+  max-width: 1200px;
+  font-size: 20px;
+  line-height: 1.2;
+  gap: 20px;
+  background-color: white;
+}
+.HeaderWrapper .VisionWrap div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.HeaderWrapper .VisionWrap h2 {
+  font-size: 28px;
+  color: rgba(3, 72, 82, 1);
+}
+
+.HeaderWrapper .VisionWrap img {
+  width: 100px;
+  height: 130px;
+  flex-shrink: 0;
+}
+.HeaderWrapper .VisionWrap .TextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 1200px) {
+  .HeaderWrapper .DetailWrapper {
+    flex-direction: column-reverse;
+    padding: 0px 10vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+  .HeaderWrapper .DetailWrapper .MapWrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  .HeaderWrapper .DetailWrapper .MapWrapper img {
+    object-fit: contain;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 {
+    font-size: 6.5vw;
+    line-height: 1.1;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 div {
+    border-bottom: 1vw solid rgba(3, 72, 82, 0.1);
+    height: 6vw;
+  }
+
+  .HeaderWrapper .VisionWrap {
+    padding: 20px 10vw;
+    font-size: 18px;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .HeaderWrapper .VisionWrap .TextContainer {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HeaderWrapper {
+    padding: 80px 0px 0px;
+  }
+  .HeaderWrapper .DetailWrapper {
+    padding: 0px 5vw;
+    gap: 20px;
+  }
+
+  .HeaderWrapper .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 {
+    font-size: 7.8vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content h2 div {
+    border-bottom: 1.5vw solid rgba(3, 72, 82, 0.1);
+    height: 7.6vw;
+  }
+  .HeaderWrapper .DetailWrapper > .Content > div > p {
+    font-size: 16px;
+  }
+  .HeaderWrapper .VisionWrap {
+    flex-direction: column-reverse;
+    padding: 20px 5vw;
+    font-size: 15px;
+    text-align: justify;
+  }
+  .HeaderWrapper .VisionWrap h2 {
+    font-size: 22px;
+  }
+  .HeaderWrapper .DetailWrapper .MapWrapper .blobImage {
+    transform: translateX(20px);
+  }
+}

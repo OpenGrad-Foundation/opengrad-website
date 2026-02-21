@@ -1,0 +1,76 @@
+.CounterContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 5vw;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.CounterContainer > div {
+  border-right: 1px solid #05b570;
+}
+.CounterContainer > div:last-child {
+  border-right: none;
+}
+.CounterComponent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 35px 5px 10px;
+}
+.CounterComponent > svg {
+  width: 45px;
+  height: 45px;
+  transform: scale(1.5);
+}
+.CounterComponent h1 {
+  color: #05b570;
+  font-size: 45px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.CounterComponent div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1088px) {
+  .CounterComponent > svg {
+    width: 40px;
+    height: 40px;
+  }
+  .CounterComponent h1 {
+    color: #05b570;
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .CounterContainer > div:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .CounterContainer {
+    flex-direction: column;
+  }
+  .CounterContainer > div {
+    border-right: none;
+  }
+  .CounterComponent {
+    padding: 5px 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .CounterComponent > svg {
+    width: 50px;
+    height: 50px;
+  }
+  .CounterComponent h1 {
+    font-size: 50px;
+  }
+}

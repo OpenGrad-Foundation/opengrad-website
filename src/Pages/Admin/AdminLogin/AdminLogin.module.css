@@ -1,0 +1,40 @@
+.RegistrationWrapper {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  justify-content: center;
+  background-color: rgba(5, 181, 112, 0.5);
+  gap: 30px;
+}
+
+.RegistrationWrapper .InputContainerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.RegistrationWrapper .InputContainerWrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.RegistrationWrapper .InputContainerWrapper input {
+  background-color: white;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+}
+.RegistrationWrapper .InputContainerWrapper .buttonWrapper {
+  flex-direction: row;
+}
+.RegistrationWrapper .InputContainerWrapper button {
+  background-color: rgba(3, 72, 82, 1);
+  width: fit-content;
+  padding: 10px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,276 @@
+.TableWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search {
+  border: 2px solid #222;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  width: 20rem;
+  background-color: white;
+  color: black;
+}
+
+.tableHeader {
+  width: 100%;
+  display: flex;
+
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination select {
+  border: 2px solid #222;
+  padding: 0.5rem 0.5rem;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+
+.paginationFooter {
+  width: 100%;
+  color: var(--primary);
+}
+
+.pageButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pageButtonContainer div {
+  color: var(--primary);
+  border: 3px solid var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.3rem;
+  font-size: 20px;
+}
+
+.pageButtonContainer div:hover {
+  cursor: pointer;
+  background-color: var(--secondary);
+}
+
+.pageButtonContainer b {
+  font-size: 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageButtonContainer .disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.114);
+}
+
+@media screen and (max-width: 600px) {
+  .search input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .search {
+    width: 100%;
+  }
+  .pagination {
+    padding: 0 0.5rem;
+  }
+}
+
+.search input::placeholder {
+  color: black;
+}
+
+.table {
+  overflow-x: scroll;
+}
+
+.tableBody {
+  width: 100%;
+  max-height: fit-content;
+  background-color: #fffb;
+
+  border-radius: 0.6rem;
+  overflow-x: scroll;
+}
+
+.tableBody::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: green;
+  visibility: hidden;
+}
+
+.tableBody:hover::-webkit-scrollbar {
+  visibility: visible;
+}
+
+.tableBody::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.tableBody:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.TableWrapper table {
+  width: 100%;
+}
+
+.TableWrapper td img {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.TableWrapper table,
+.TableWrapper th,
+.TableWrapper td {
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: left;
+}
+
+.tableBody thead th {
+  background-color: var(--secondary);
+  cursor: pointer;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+}
+
+.tableBody tbody tr:nth-child(even) {
+  background: linear-gradient(
+      0deg,
+      rgba(5, 181, 112, 0.08) 0%,
+      rgba(5, 181, 112, 0.08) 100%
+    ),
+    #fefefe;
+}
+
+.tableBody tbody tr {
+  --delay: 0.1s;
+  transition: 0.5s ease-in-out var(--delay), background-color 0s;
+  cursor: pointer;
+}
+
+.tableBody tbody tr.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.tableBody tbody tr:hover {
+  background: var(--secondary) !important;
+}
+
+.tableBody tbody tr td,
+.tableBody tbody tr td p,
+.tableBody tbody tr td img {
+  transition: 0.2s ease-in-out;
+  max-width: 300px !important;
+  text-wrap: nowrap;
+  overflow: scroll;
+  max-height: 100px !important;
+}
+
+.tableBody tbody tr.hide td,
+.tableBody tbody tr.hide td p {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+.tableBody tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+.status {
+  padding: 0.4rem 0;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.status.delivered {
+  background-color: #86e49d;
+  color: #006b21;
+}
+
+.status.cancelled {
+  background-color: #d893a3;
+  color: #b30021;
+}
+
+.status.pending {
+  background-color: #ebc474;
+}
+
+.status.shipped {
+  background-color: #6fcaea;
+}
+
+@media (max-width: 1000px) {
+  td:not(:first-of-type) {
+    min-width: 12.1rem;
+  }
+}
+
+.tableBody thead th div span {
+  font-size: 20px;
+}
+
+.tableBody thead th div span:hover {
+  scale: 1.2;
+}
+
+.tableBody thead th div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.tableBody thead th:hover {
+  color: #05B570;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 15rem;
+  width: 100%;
+}
+
+.action {
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.action div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.action div:hover {
+  background-color: rgba(169, 169, 169, 0.726);
+  border-radius: 50%;
+}

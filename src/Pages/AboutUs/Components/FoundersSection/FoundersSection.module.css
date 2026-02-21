@@ -1,0 +1,22 @@
+.FoundersSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0px 5vw 30px;
+  gap: 6vh;
+  background-color: white;
+}
+
+.FoundersSection >  div.foundersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.FoundersSection > div >div{
+    max-width: 300px;
+}

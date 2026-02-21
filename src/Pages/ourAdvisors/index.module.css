@@ -1,0 +1,281 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("../assets/backgroundLines.png") center top/contain no-repeat;
+  padding-bottom: 40px;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 100px 5vw 50px;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+  gap: 5vh;
+}
+
+.inner .BackgroundText {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.inner .BackgroundText h1 {
+  font-size: 13vw;
+  color: var(--Secondary, #05b570);
+  opacity: 0.06;
+  margin-top: 8vh;
+  font-weight: 900;
+  text-wrap: nowrap;
+}
+.inner .DetailWrapper {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 8vh 0vw 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+
+.inner .DetailWrapper > .Content {
+  width: calc(100%);
+  height: calc(100% - 0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1ch;
+  min-width: 300px;
+  z-index: 110;
+  flex-wrap: wrap;
+}
+.inner .DetailWrapper > .Content .TopInner {
+  border-left: 5px solid #034852;
+  margin-left: 1vw;
+}
+.inner .DetailWrapper > .Content .TopInner p {
+  background-color: #05b570;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3vw;
+  margin-left: 2px;
+  color: white;
+  font-weight: 800;
+  padding: 8px 3px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner .DetailWrapper {
+    flex-direction: column;
+    padding: 4vh 5vw 0px;
+  }
+  .inner .DetailWrapper > .Content {
+    width: 100%;
+  }
+  .inner .DetailWrapper > .Content .TopInner {
+    margin-left: 2vw;
+  }
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 4.3vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .inner {
+    padding: 100px 0px 30px;
+  }
+  .inner .DetailWrapper {
+    gap: 20px;
+  }
+
+  .inner .DetailWrapper > .Content .TopInner p {
+    font-size: 5.4vw;
+  }
+}
+
+.Container {
+  display: flex;
+  position: relative;
+  gap: 25px;
+  text-align: left;
+  padding: 0px 5vw;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.CategoryButtons {
+  display: flex;
+  flex-direction: column;
+  text-wrap: nowrap;
+  position: sticky;
+  top: 150px;
+  flex-shrink: 0;
+  transition: position 0.3s ease;
+  height: fit-content;
+}
+
+.CategoryButtons button {
+  padding: 15px 35px;
+  min-width: 200px;
+  color: var(--Primary, #034852);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 1px solid #82dab7;
+  background: #fff;
+}
+
+.CategoryButtons button.ActiveButton {
+  background: url("../newsletterAndReports/assets/bg.webp") center center/cover
+    no-repeat;
+  color: #fff;
+}
+
+.CategoryData {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+}
+.CategoryData > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+.CategoryData > div h1 {
+  text-align: left;
+}
+.contentdata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+.ImageHoverBoxWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: calc(50% - 15px);
+}
+.ImageHoverBoxWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.ImageHoverBoxWrap .FrontDiv {
+  background-color: #ededed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 500;
+  display: flex;
+}
+.ImageHoverBoxWrap .FrontDiv img {
+  width: 100%;
+  filter: grayscale(100%);
+  border: none;
+  object-fit: cover;
+}
+.ImageHoverBoxWrap .BackDiv {
+  height: 100%;
+  width: 100%;
+  background-color: #034852;
+}
+
+.ImageHoverBoxWrap:hover .BackDiv {
+  margin-bottom: -20px;
+  margin-right: -20px;
+}
+
+.ImageHoverBoxWrap:hover .FrontDiv img {
+  filter: grayscale(0%);
+}
+
+.ImageHoverBoxWrapper .Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ImageHoverBoxWrapper .Content h3 {
+  color: var(--Primary, #034852);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.ImageHoverBoxWrapper .Content h4 {
+  color: var(--Secondary, #05b570);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.ImageHoverBoxWrapper .Content p {
+  color: #1f1f1f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 15px;
+}
+@media screen and (max-width: 1300px) {
+  .ImageHoverBoxWrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .CategoryButtons button {
+    padding: 15px 30px;
+    min-width: none;
+    font-size: 17px;
+  }
+
+  .ImageHoverBoxWrapper .Content h3 {
+    font-size: 17px;
+  }
+  .ImageHoverBoxWrapper .Content h4 {
+    font-size: 16px;
+  }
+  .ImageHoverBoxWrapper .Content p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Container {
+    flex-direction: column;
+  }
+  .CategoryButtons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ImageHoverBoxWrapper {
+    flex-direction: column;
+  }
+  .CategoryButtons {
+    top: 87px;
+  }
+}

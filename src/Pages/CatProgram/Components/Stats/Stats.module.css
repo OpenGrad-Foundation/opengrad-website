@@ -1,0 +1,47 @@
+.statsSection {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .statsSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #05b570;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 1.125rem;
+  color: #4a4a4a;
+}
+
+@media (min-width: 768px) {
+  .statLabel {
+    font-size: 1.25rem;
+  }
+}

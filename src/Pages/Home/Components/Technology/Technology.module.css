@@ -1,0 +1,105 @@
+.TechnologyWrapper {
+  width: 100%;
+  padding: 60px 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  background-color: #fff;
+}
+
+.Title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #034852;
+  text-align: center;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.GridContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.GridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 150px;
+  gap: 15px;
+}
+
+.IconWrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.5);
+}
+
+.IconWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ItemText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #034852;
+  margin: 0;
+  max-width: 140px;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1024px) {
+  .Title {
+    font-size: 36px;
+  }
+  
+  .GridContainer {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .GridItem {
+    flex: 0 0 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .TechnologyWrapper {
+    padding: 40px 5vw;
+  }
+  
+  .Title {
+    font-size: 28px;
+  }
+  
+  .GridItem {
+    flex: 0 0 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .GridContainer {
+    gap: 15px 10px;
+  }
+
+  .GridItem {
+    flex: 0 0 45%;
+    min-width: unset;
+  }
+  
+  .ItemText {
+    max-width: none;
+    font-size: 14px;
+  }
+}

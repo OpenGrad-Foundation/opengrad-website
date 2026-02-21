@@ -1,0 +1,42 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 6vh 0px 0px;
+  align-items: center;
+}
+
+.Wrapper .Header {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  padding: 0px 5vw;
+  max-width: 1500px;
+  align-items: center;
+}
+
+.headingContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Wrapper .VideoSet {
+  position: relative;
+  width: 100%;
+  padding: 6vh 30px;
+  background: url(./bgvideo.png) center center/cover no-repeat;
+
+}
+
+
+.VideoSet iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 360px;
+
+  border-radius: 10px;
+  z-index: 999;
+}

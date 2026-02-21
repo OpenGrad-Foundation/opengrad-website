@@ -1,0 +1,124 @@
+.Wrapper,
+.TaxForms {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+.TaxForms {
+  min-height: 100dvh;
+  justify-content: space-between;
+}
+.Wrapper .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 5% 5vh;
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+  text-align: left;
+}
+
+.Wrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 30px;
+}
+.Wrapper a,
+.TaxForms a {
+  color: black;
+  font-weight: 700;
+}
+
+.TaxForms .inner {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-bottom: 5vh;
+}
+
+.TaxForms .taxFormsContainer {
+  text-align: center;
+}
+
+.TaxForms .heading {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.TaxForms .formsList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.TaxForms .formItem {
+  text-align: center;
+}
+
+.TaxForms .pdfIcon {
+  color: #d9534f;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.TaxForms a {
+  font-size: 1.2em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.TaxForms a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .TaxForms .formsList {
+    flex-direction: column;
+  }
+
+  .TaxForms .formItem {
+    margin-bottom: 20px;
+  }
+}
+
+.tableOfContents {
+  margin-bottom: 40px;
+}
+
+.tableOfContents h2 {
+  font-size: 1.8em;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2em;
+  color: #007bff;
+}
+
+.table td:hover {
+  text-decoration: underline;
+}
+
+.termsContent section {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
