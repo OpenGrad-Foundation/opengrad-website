@@ -5,7 +5,7 @@ const YoutubeChannel = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>Visit our Youtube Channel</h2>
       <p className={styles.description}>
-        One of the most trusted higher education YouTube channel in Kerala with over 20K subscribers giving real insights and experiences on higher educational opportunities.
+        One of the most trusted higher education YouTube channel in India with over 20K subscribers giving real insights and experiences on higher educational opportunities.
       </p>
       <div className={styles.videoContainer}>
          
