@@ -38,18 +38,19 @@ export const Header = () => {
           <div>
             <h2>Our Vision<span style={{color: "#07ff9e"}}></span></h2>
             <p>
-              OpenGrad Foundation transforms access to higher education by using technology to actively guide
-              students from government schools, from career decisions and entrance
-              pathways to admissions and post-admission success.
+              To ensure students from government and underserved communities have equal access to quality
+              higher education, enabling long-term socio-economic mobility, employment and inclusive national
+              development.
             </p>
           </div>
           <div>
             <h2>Our Mission<span style={{color: "#07ff9e"}}></span></h2>
             <p>
-              To ensure students from government and underserved communities have equal access to quality
-              higher education, enabling long-term socio-economic mobility, employment and inclusive national
-              development.
+              OpenGrad Foundation transforms access to higher education by using technology to actively guide
+              students from government schools, from career decisions and entrance
+              pathways to admissions and post-admission success.
             </p>
+
           </div>
         </div>
         <img src={Vision} alt="" />
