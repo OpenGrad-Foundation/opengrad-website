@@ -144,6 +144,7 @@ const AddAdvisorsModal: React.FC<Props> = ({ isOpen, onClose, onDone }) => {
           <option value="Patrons">Patrons</option>
           <option value="Core Advisory">Core Advisory</option>
           <option value="Domain Advisory">Domain Advisory</option>
+          <option value="Advisors">Advisors</option>
         </select>
         <input
           name="name"
