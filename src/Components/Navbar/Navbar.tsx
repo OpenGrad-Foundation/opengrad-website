@@ -87,6 +87,7 @@ export const Navbar = (_props: Props) => {
               </a>
             );
           })}
+          <DonateButton />
         </div>
       </div>
       <div className={styles.navbarMobile}>
@@ -119,6 +120,7 @@ export const Navbar = (_props: Props) => {
                 </a>
               );
             })}
+            <DonateButton />
             <AccessButton />
           </div>
         )}
@@ -182,10 +184,22 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, links }) => {
 
 export const AccessButton = () => {
   return (
-    <button className={styles.StudyButton}>
-      <a href="https://opengrad-foundation.learnyst.com/learn" target="_blank">
-        Access Courses
-      </a>
+    <button 
+      className={styles.StudyButton}
+      onClick={() => window.open("https://opengrad-foundation.learnyst.com/learn", "_blank")}
+    >
+      Access Courses
+    </button>
+  );
+};
+
+export const DonateButton = () => {
+  return (
+    <button 
+      className={styles.DonateButton}
+      onClick={() => window.open("https://rzp.io/rzp/XmTgankP", "_blank")}
+    >
+      Donate
     </button>
   );
 };
