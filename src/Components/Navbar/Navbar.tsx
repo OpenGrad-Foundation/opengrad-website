@@ -54,11 +54,17 @@ export const Navbar = (_props: Props) => {
 
   return (
     <>
-      <div className={styles.marqueeContainer}>
+      <a 
+        href="https://fellowship-landing.vercel.app" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={styles.marqueeContainer}
+        style={{ textDecoration: "none" }}
+      >
         <div className={styles.marqueeText}>
-          Tamil Nadu Fellowship 2026–2027 Applications Are Now Open. <a href="https://fellowship-landing.vercel.app" target="_blank" rel="noopener noreferrer">Apply Here</a>  | Deadline: 10 July 2026
+          Tamil Nadu Fellowship 2026–2027 Applications Are Now Open. <span style={{ textDecoration: "underline", fontWeight: "bold" }}>Apply Here</span>  | Deadline: 10 July 2026
         </div>
-      </div>
+      </a>
       <div
         className={styles.navbarWrapper}
 
