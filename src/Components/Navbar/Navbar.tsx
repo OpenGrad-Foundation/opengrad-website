@@ -53,11 +53,17 @@ export const Navbar = (_props: Props) => {
 
 
   return (
-    <div
-      className={styles.navbarWrapper}
+    <>
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeText}>
+          Tamil Nadu Fellowship 2026–2027 Applications Are Now Open. <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQtG6W4sTB0SFhuVRJUHvdAP96hAsntI4mSMPavw0eyvABOQ/viewform" target="_blank" rel="noopener noreferrer">Apply Here</a>
+        </div>
+      </div>
+      <div
+        className={styles.navbarWrapper}
   
-    >
-      <div className={styles.navbarLeft}>
+      >
+        <div className={styles.navbarLeft}>
         <a href="/home">
           <img src={logo} alt="Logo" />
         </a>
@@ -126,7 +132,8 @@ export const Navbar = (_props: Props) => {
         )}
       </div>
       <AccessButton />
-    </div>
+      </div>
+    </>
   );
 };
 
