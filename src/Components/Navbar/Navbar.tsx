@@ -24,7 +24,7 @@ export const Navbar = (_props: Props) => {
     //     { label: "Running Cohorts", href: "/runningcohorts" },
     //   ],
     // },
-      {
+    {
       label: "Program",
       dropdown: [
         { label: "Govt Projects", href: "/govtprojects" },
@@ -42,7 +42,7 @@ export const Navbar = (_props: Props) => {
     { label: "People", href: "/people" },
     // { label: "Advisory", href: "/ouradvisors" },
     { label: "Blogs & Reports", href: "/blogsreports" },
-  
+
   ];
 
 
@@ -54,57 +54,28 @@ export const Navbar = (_props: Props) => {
 
   return (
     <>
-      <div className={styles.marqueeContainer}>
+      <a 
+        href="https://fellowship-landing.vercel.app" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={styles.marqueeContainer}
+        style={{ textDecoration: "none" }}
+      >
         <div className={styles.marqueeText}>
-          Tamil Nadu Fellowship 2026–2027 Applications Are Now Open. <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQtG6W4sTB0SFhuVRJUHvdAP96hAsntI4mSMPavw0eyvABOQ/viewform" target="_blank" rel="noopener noreferrer">Apply Here</a>
+          Tamil Nadu Fellowship 2026–2027 Applications Are Now Open. <span style={{ textDecoration: "underline", fontWeight: "bold" }}>Apply Here</span>  | Deadline: 10 July 2026
         </div>
-      </div>
+      </a>
       <div
         className={styles.navbarWrapper}
-  
+
       >
         <div className={styles.navbarLeft}>
-        <a href="/home">
-          <img src={logo} alt="Logo" />
-        </a>
-      </div>
-      <div className={styles.navbarRight}>
-        <div>
-          {navContent.map((item, i) => {
-            if (item.dropdown) {
-              return (
-                <Dropdown key={i} title={item.label} links={item.dropdown} />
-              );
-            }
-
-            return (
-              <a href={item.href} key={i}>
-                <p
-                  style={{
-                    fontSize: "17px",
-                    fontWeight: 600,
-                    color: window.location.href.includes(item.href)
-                      ? "#05B570"
-                      : "#696969",
-                  }}
-                >
-                  {item.label}
-                </p>
-              </a>
-            );
-          })}
-          <DonateButton />
+          <a href="/home">
+            <img src={logo} alt="Logo" />
+          </a>
         </div>
-      </div>
-      <div className={styles.navbarMobile}>
-        <button className={styles.menuMd} onClick={openMenu}>
-          <MdMenu />
-        </button>
-        {openmenu && (
+        <div className={styles.navbarRight}>
           <div>
-            <button className={styles.menuMd} onClick={openMenu}>
-              <IoMdClose />
-            </button>
             {navContent.map((item, i) => {
               if (item.dropdown) {
                 return (
@@ -116,6 +87,8 @@ export const Navbar = (_props: Props) => {
                 <a href={item.href} key={i}>
                   <p
                     style={{
+                      fontSize: "17px",
+                      fontWeight: 600,
                       color: window.location.href.includes(item.href)
                         ? "#05B570"
                         : "#696969",
@@ -127,11 +100,44 @@ export const Navbar = (_props: Props) => {
               );
             })}
             <DonateButton />
-            <AccessButton />
           </div>
-        )}
-      </div>
-      <AccessButton />
+        </div>
+        <div className={styles.navbarMobile}>
+          <button className={styles.menuMd} onClick={openMenu}>
+            <MdMenu />
+          </button>
+          {openmenu && (
+            <div>
+              <button className={styles.menuMd} onClick={openMenu}>
+                <IoMdClose />
+              </button>
+              {navContent.map((item, i) => {
+                if (item.dropdown) {
+                  return (
+                    <Dropdown key={i} title={item.label} links={item.dropdown} />
+                  );
+                }
+
+                return (
+                  <a href={item.href} key={i}>
+                    <p
+                      style={{
+                        color: window.location.href.includes(item.href)
+                          ? "#05B570"
+                          : "#696969",
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                  </a>
+                );
+              })}
+              <DonateButton />
+              <AccessButton />
+            </div>
+          )}
+        </div>
+        <AccessButton />
       </div>
     </>
   );
@@ -191,7 +197,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, links }) => {
 
 export const AccessButton = () => {
   return (
-    <button 
+    <button
       className={styles.StudyButton}
       onClick={() => window.open("https://opengrad-foundation.learnyst.com/learn", "_blank")}
     >
@@ -202,7 +208,7 @@ export const AccessButton = () => {
 
 export const DonateButton = () => {
   return (
-    <button 
+    <button
       className={styles.DonateButton}
       onClick={() => window.open("https://rzp.io/rzp/XmTgankP", "_blank")}
     >
