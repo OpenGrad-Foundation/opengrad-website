@@ -227,7 +227,7 @@
 .marqueeText {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollMarquee 10s linear infinite;
+  animation: scrollMarquee 15s linear infinite;
   font-weight: 600;
   font-size: 22px;
   letter-spacing: 0.5px;
