@@ -7,7 +7,7 @@
   padding: 25px 5vw 20px;
   z-index: 9990;
   backdrop-filter: blur(8px);
-  top: 60px;
+  top: 0;
   background-color: white;
 }
 
@@ -208,48 +208,4 @@
   .navbarWrapper {
     padding: 20px 5vw 15px;
   }
-}
-
-.marqueeContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #00272d;
-  color: white;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  z-index: 9995;
-}
-
-.marqueeText {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scrollMarquee 15s linear infinite;
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: 0.5px;
-  padding-left: 100%;
-}
-
-.marqueeText a {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.marqueeText a:hover {
-  color: #f1f1f1;
-}
-
-@keyframes scrollMarquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
+}
