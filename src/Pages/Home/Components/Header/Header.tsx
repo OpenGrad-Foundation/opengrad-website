@@ -61,7 +61,7 @@ export const Header = (_props: Props) => {
               style={{ backgroundColor: "#00272D", color: "white" }}
               onClick={() =>
                 window.open(
-                  "https://opengrad-foundation.learnyst.com/learn",
+                  "https://hub.opengrad.in",
                   "_blank"
                 )
               }

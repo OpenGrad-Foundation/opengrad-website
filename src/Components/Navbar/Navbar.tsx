@@ -188,7 +188,7 @@ export const AccessButton = () => {
   return (
     <button
       className={styles.StudyButton}
-      onClick={() => window.open("https://opengrad-foundation.learnyst.com/learn", "_blank")}
+      onClick={() => window.open("https://hub.opengrad.in", "_blank")}
     >
       Access Courses
     </button>
