@@ -1,0 +1,352 @@
+.carousel {
+  color: #034852;
+  font-family: Raleway, system-ui, sans-serif;
+}
+
+.carousel button {
+  font-family: inherit !important;
+}
+
+.viewport {
+  overflow: hidden;
+  border-top: 2px solid #034852;
+  padding-top: 40px;
+}
+
+.track {
+  display: flex;
+  width: calc(var(--slide-count) * 100%);
+  animation-duration: var(--duration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.carousel[data-count="2"] .track {
+  animation-name: quotesTwo;
+}
+
+.carousel[data-count="3"] .track {
+  animation-name: quotesThree;
+}
+
+.carousel[data-count="4"] .track {
+  animation-name: quotesFour;
+}
+
+.carousel[data-count="5"] .track {
+  animation-name: quotesFive;
+}
+
+.slide {
+  margin: 0;
+  flex: 0 0 calc(100% / var(--slide-count));
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 4px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.slide > img {
+  box-sizing: content-box;
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #0abe62;
+}
+
+.slide > div {
+  min-width: 0;
+}
+
+.slide blockquote {
+  margin: 0 0 22px;
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #034852;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 21px;
+  color: #034852;
+}
+
+.role {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #4f5f63;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #c9d9d6;
+  cursor: pointer;
+  animation-duration: var(--duration);
+  animation-delay: var(--dot-delay);
+  animation-iteration-count: infinite;
+}
+
+.carousel[data-count="2"] .dot {
+  animation-name: dotTwo;
+}
+
+.carousel[data-count="3"] .dot {
+  animation-name: dotThree;
+}
+
+.carousel[data-count="4"] .dot {
+  animation-name: dotFour;
+}
+
+.carousel[data-count="5"] .dot {
+  animation-name: dotFive;
+}
+
+.carousel:hover .track, .carousel:hover .dot, .carousel:focus-within .track, .carousel:focus-within .dot {
+  animation-play-state: paused;
+}
+
+.carousel[data-manual] .track {
+  animation: none;
+  transform: translateX(calc(var(--selected) * -100% / var(--slide-count)));
+}
+
+.carousel[data-manual] .dot {
+  animation: none;
+}
+
+.carousel[data-manual] .dot[data-selected] {
+  background: #0abe62;
+  width: 28px;
+}
+
+.dot:focus-visible, .resume:focus-visible {
+  outline: 2px solid #034852;
+  outline-offset: 5px;
+}
+
+.resume {
+  margin-left: 8px;
+  padding: 0;
+  background: transparent;
+  color: #034852;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes quotesTwo {
+  0%,40% {
+    transform: translateX(0);
+  }
+  50%,90% {
+    transform: translateX(calc(-100% / 3));
+  }
+  100% {
+    transform: translateX(calc(-200% / 3));
+  }
+}
+
+@keyframes quotesThree {
+  0%,27% {
+    transform: translateX(0);
+  }
+  33%,60% {
+    transform: translateX(-25%);
+  }
+  67%,93% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+
+@keyframes quotesFour {
+  0%,20% {
+    transform: translateX(0);
+  }
+  25%,45% {
+    transform: translateX(-20%);
+  }
+  50%,70% {
+    transform: translateX(-40%);
+  }
+  75%,95% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes dotTwo {
+  0%,49% {
+    background: #0abe62;
+    width: 28px;
+  }
+  50%,100% {
+    background: #c9d9d6;
+    width: 10px;
+  }
+}
+
+@keyframes dotThree {
+  0%,32% {
+    background: #0abe62;
+    width: 28px;
+  }
+  33%,100% {
+    background: #c9d9d6;
+    width: 10px;
+  }
+}
+
+@keyframes dotFour {
+  0%,24% {
+    background: #0abe62;
+    width: 28px;
+  }
+  25%,100% {
+    background: #c9d9d6;
+    width: 10px;
+  }
+}
+
+/* CAT uses the same layout with slightly smaller desktop quote type. */
+.carousel[data-variant="cat"] .slide blockquote {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.carousel[data-variant="cat"] .role {
+  line-height: normal;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #209379;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track, .dot {
+    animation: none !important;
+  }
+  .carousel:not([data-manual]) .dot:first-child {
+    background: #0abe62;
+    width: 28px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slide {
+    gap: 32px;
+  }
+  .slide > img {
+    width: 190px;
+    height: 190px;
+  }
+  .slide blockquote {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .viewport {
+    padding-top: 28px;
+  }
+  .slide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .slide > img {
+    width: 156px;
+    height: 156px;
+  }
+  .slide blockquote {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .name {
+    font-size: 19px;
+  }
+  .role {
+    font-size: 15px;
+  }
+  .dots {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide > img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@keyframes quotesFive {
+  0%,16% {
+    transform: translateX(0);
+  }
+  20%,36% {
+    transform: translateX(calc(-100% / 6));
+  }
+  40%,56% {
+    transform: translateX(calc(-200% / 6));
+  }
+  60%,76% {
+    transform: translateX(calc(-300% / 6));
+  }
+  80%,96% {
+    transform: translateX(calc(-400% / 6));
+  }
+  100% {
+    transform: translateX(calc(-500% / 6));
+  }
+}
+
+@keyframes dotFive {
+  0%,19% {
+    background: #0abe62;
+    width: 28px;
+  }
+  20%,100% {
+    background: #c9d9d6;
+    width: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel[data-variant="cat"] .slide blockquote {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel[data-variant="cat"] .slide blockquote {
+    font-size: 20px;
+  }
+}

@@ -1,207 +1,127 @@
 import styles from "./Navbar.module.css";
-import logo from "../../../loader.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, ScrollRestoration, useLocation } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 import { IoMdClose, IoMdArrowDropdown } from "react-icons/io";
+import { DONATE_URL, HUB_URL, STATE_PAGES } from "../siteLinks";
 
-type Props = {};
+type NavLink = { label: string; href: string; external?: boolean };
+type NavItem = NavLink & { dropdown?: NavLink[] };
 
-type DropdownProps = {
-  title: string;
-  links: { label: string; href: string }[];
-};
+const navContent: NavItem[] = [
+  { label: "Home", href: "/home" },
+  { label: "Our Model", href: "/home#our-model" },
+  {
+    label: "Where We Work",
+    href: "/home#where-we-work",
+    dropdown: [...STATE_PAGES, { label: "CAT MBA Program", href: "/catprogram" }],
+  },
+  {
+    label: "Impact",
+    href: "/blogsreports",
+    dropdown: [
+      { label: "Blogs & Reports", href: "/blogsreports" },
+      { label: "Newsletters", href: "/newletters&reports" },
+    ],
+  },
+  { label: "Get Involved", href: "/home#get-involved" },
+  { label: "Contact Us", href: "/contact" },
+];
 
-export const Navbar = (_props: Props) => {
-  const [openmenu, setopenmenu] = useState(false);
+const pathOf = (href: string) => href.split("#")[0];
 
-  const navContent = [
-    { label: "Home", href: "/home" },
-    { label: "About Us", href: "/aboutus" },
-    // {
-    //   label: "Cohorts",
-    //   dropdown: [
-    //     { label: "Completed Cohorts", href: "/completedcohorts" },
-    //     { label: "Running Cohorts", href: "/runningcohorts" },
-    //   ],
-    // },
-    {
-      label: "Program",
-      dropdown: [
-        { label: "Govt Projects", href: "/govtprojects" },
-        { label: "CAT Program", href: "/catprogram" },
-      ],
-    },
-    // {
-    //   label: "Govt Projects",
-    //   href: "/govtprojects",//https://jubilant-humor-287726.framer.app
-    // },
-    // {
-    //   label: "CAT Program",
-    //   href: "/catprogram",
-    // },
-    { label: "People", href: "/people" },
-    // { label: "Advisory", href: "/ouradvisors" },
-    { label: "Blogs & Reports", href: "/blogsreports" },
+const ItemLink = ({ link, className }: { link: NavLink; className?: string }) =>
+  link.external ? (
+    <a href={link.href} target="_blank" rel="noreferrer" className={className}>
+      {link.label}
+    </a>
+  ) : (
+    <Link to={link.href} className={className}>
+      {link.label}
+    </Link>
+  );
 
-  ];
+export const Navbar = () => {
+  const { pathname, hash } = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  }, [pathname, hash]);
 
-
-  function openMenu() {
-    setopenmenu(!openmenu);
-  }
-
+  // Home is active only on the bare home page, not when a /home#section item is.
+  const isActive = (item: NavItem) => {
+    const here = pathname + hash;
+    if (item.dropdown) return item.dropdown.some((d) => !d.external && pathOf(d.href) === pathname) || here === item.href;
+    return item.href.includes("#") ? here === item.href : pathname === item.href && !hash;
+  };
 
   return (
-    <>
-      <div
-        className={styles.navbarWrapper}
+    <header className={styles.header} data-section="header">
+      {/* Every page renders the navbar once: scroll to top on navigation, or to #hash targets. */}
+      <ScrollRestoration />
+      <div className={styles.inner}>
+        <Link to="/home" className={styles.wordmark}>
+          OpenGrad
+        </Link>
 
-      >
-        <div className={styles.navbarLeft}>
-          <a href="/home">
-            <img src={logo} alt="Logo" />
+        <button
+          className={styles.menuButton}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          {menuOpen ? <IoMdClose /> : <MdMenu />}
+        </button>
+
+        <nav aria-label="Main" className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+          {navContent.map((item) => {
+            const cls = `${styles.link} ${isActive(item) ? styles.active : ""}`;
+            if (!item.dropdown) return <ItemLink key={item.label} link={item} className={cls} />;
+            const open = openDropdown === item.label;
+            return (
+              <div
+                key={item.label}
+                className={styles.dropdown}
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button
+                  className={cls}
+                  aria-expanded={open}
+                  onClick={() => setOpenDropdown(open ? null : item.label)}
+                >
+                  {item.label}
+                  <IoMdArrowDropdown className={open ? styles.caretOpen : styles.caret} />
+                </button>
+                {open && (
+                  <div className={styles.menu}>
+                    {item.dropdown.map((d) => (
+                      <ItemLink
+                        key={d.label}
+                        link={d}
+                        className={!d.external && pathOf(d.href) === pathname ? styles.active : undefined}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          <a href={DONATE_URL} target="_blank" rel="noreferrer" className={styles.donate}>
+            Donate
           </a>
-        </div>
-        <div className={styles.navbarRight}>
-          <div>
-            {navContent.map((item, i) => {
-              if (item.dropdown) {
-                return (
-                  <Dropdown key={i} title={item.label} links={item.dropdown} />
-                );
-              }
+          <a href={HUB_URL} target="_blank" rel="noreferrer" className={`${styles.access} ${styles.accessMobile}`}>
+            Access Courses
+          </a>
+        </nav>
 
-              return (
-                <a href={item.href} key={i}>
-                  <p
-                    style={{
-                      fontSize: "17px",
-                      fontWeight: 600,
-                      color: window.location.href.includes(item.href)
-                        ? "#05B570"
-                        : "#696969",
-                    }}
-                  >
-                    {item.label}
-                  </p>
-                </a>
-              );
-            })}
-            <DonateButton />
-          </div>
-        </div>
-        <div className={styles.navbarMobile}>
-          <button className={styles.menuMd} onClick={openMenu}>
-            <MdMenu />
-          </button>
-          {openmenu && (
-            <div>
-              <button className={styles.menuMd} onClick={openMenu}>
-                <IoMdClose />
-              </button>
-              {navContent.map((item, i) => {
-                if (item.dropdown) {
-                  return (
-                    <Dropdown key={i} title={item.label} links={item.dropdown} />
-                  );
-                }
-
-                return (
-                  <a href={item.href} key={i}>
-                    <p
-                      style={{
-                        color: window.location.href.includes(item.href)
-                          ? "#05B570"
-                          : "#696969",
-                      }}
-                    >
-                      {item.label}
-                    </p>
-                  </a>
-                );
-              })}
-              <DonateButton />
-              <AccessButton />
-            </div>
-          )}
-        </div>
-        <AccessButton />
+        <a href={HUB_URL} target="_blank" rel="noreferrer" className={styles.access}>
+          Access Courses
+        </a>
       </div>
-    </>
-  );
-};
-
-export const Dropdown: React.FC<DropdownProps> = ({ title, links }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const isActive = links.some((link) => window.location.href.includes(link.href));
-
-  return (
-    <div
-      className={styles.dropdownWrapper}
-      onMouseEnter={() => setShowDropdown(true)}
-      onMouseLeave={() => setShowDropdown(false)}
-      onClick={() => setShowDropdown((prev) => !prev)} // For mobile toggle
-    >
-      <p
-        style={{
-          fontSize: "17px",
-          fontWeight: 600,
-          color: isActive ? "#05B570" : "#696969",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2px",
-        }}
-      >
-        {title}
-        <IoMdArrowDropdown
-          style={{
-            transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 0.3s",
-          }}
-        />
-      </p>
-      {showDropdown && (
-        <div className={styles.dropdownMenu}>
-          {links.map((link, index) => (
-            <a
-              href={link.href}
-              key={index}
-              style={{
-                color: window.location.href.includes(link.href)
-                  ? "#05B570"
-                  : "#696969",
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-export const AccessButton = () => {
-  return (
-    <button
-      className={styles.StudyButton}
-      onClick={() => window.open("https://hub.opengrad.in", "_blank")}
-    >
-      Access Courses
-    </button>
-  );
-};
-
-export const DonateButton = () => {
-  return (
-    <button
-      className={styles.DonateButton}
-      onClick={() => window.open("https://rzp.io/rzp/XmTgankP", "_blank")}
-    >
-      Donate
-    </button>
+    </header>
   );
 };

@@ -1,0 +1,92 @@
+.band {
+  width: 100%; /* some older pages wrap content in a centered flex column */
+  background: #034852;
+  font-family: Raleway, system-ui, sans-serif;
+  text-align: left;
+}
+
+.inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.copy h2 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e3f5ec;
+}
+
+.form {
+  flex: 1 1 460px;
+  min-width: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.form input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 17px;
+  padding: 16px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2a2c;
+}
+
+.form button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 16px 28px;
+  border: 0;
+  border-radius: 6px;
+  background: #0abe62;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.srOnly {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 44px 20px;
+  }
+
+  .copy h2 {
+    font-size: 30px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+}

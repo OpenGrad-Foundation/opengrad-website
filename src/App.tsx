@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import { Home } from "./Pages/Home/Home";
 import { AboutUs } from "./Pages/AboutUs/AboutUs";
-import GovtProjects from "./Pages/GovtProjects/GovtProjects";
 import  CatProgram  from "./Pages/CatProgram/CatProgram";
 import { Volunteer } from "./Pages/Volunteer/Volunteer";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -41,6 +40,8 @@ import { Reports } from "./Pages/Admin/AdminDashboard/reports";
 import OurAdvisors from "./Pages/ourAdvisors";
 import OurAdvisorsAdmin from "./Pages/Admin/AdminDashboard/ourAdvisors";
 import CEOLetter from "./Pages/CEOLetter";
+import { TamilNadu, Chhattisgarh, Kerala } from "./Pages/StatePage";
+import { Contact } from "./Pages/Contact/Contact";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL!;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY!;
@@ -76,8 +77,25 @@ function App() {
       element: <AboutUs />,
     },
     {
+      // Replaced by the three state pages; old links land on the states overview.
       path: "/govtprojects",
-      element: <GovtProjects />,
+      element: <Navigate to="/home#where-we-work" replace />,
+    },
+    {
+      path: "/tamil-nadu",
+      element: <TamilNadu />,
+    },
+    {
+      path: "/chhattisgarh",
+      element: <Chhattisgarh />,
+    },
+    {
+      path: "/kerala",
+      element: <Kerala />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
     },
     {
       path: "/catprogram",
