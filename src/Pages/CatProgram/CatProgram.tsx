@@ -1,6 +1,7 @@
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { CAT_REPORT_URL } from "../../Components/siteLinks";
 import { Footer } from "../../Components/Footer/Footer";
+import InstagramFeed from "./Components/InstagramFeed/InstagramFeed";
 import { VoicesCarousel } from "../../Components/VoicesCarousel/VoicesCarousel";
 import {
   heroImage, heroCopy, logoRows, originPhotos, originCopy, prepCards,
@@ -150,6 +151,7 @@ export default function CatProgram() {
           <h2>VOICES FROM WITHIN</h2><VoicesCarousel slides={voices} variant="cat" />
         </div>
       </section>
+      <InstagramFeed />
       <Footer />
     </div>
   );

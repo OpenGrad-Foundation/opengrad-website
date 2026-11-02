@@ -11,9 +11,14 @@ export const STATE_PAGES = [
 ];
 
 // Contact page topic values; also used as ?topic= by CTAs elsewhere.
+// Each label becomes its own tab in the submissions Google Sheet (see form-backend/Code.gs).
 export const CONTACT_TOPICS = [
-  { value: "faculty", label: "Join as faculty" },
+  { value: "internship", label: "Internship" },
   { value: "fellowship", label: "Join the Fellowship" },
+  { value: "volunteer", label: "Volunteer" },
+  { value: "cat", label: "CAT admission" },
+  { value: "corporate", label: "Corporate volunteering" },
+  { value: "faculty", label: "Join as faculty" },
   { value: "donate", label: "Donate" },
   { value: "programmes", label: "Our programmes in my state or district" },
   { value: "media", label: "Media and press" },

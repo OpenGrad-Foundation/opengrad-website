@@ -1,54 +1,82 @@
-import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import styles from "./Footer.module.css";
-import { CONTACT_EMAIL } from "../siteLinks";
+import logo from "../../../loader.png";
+import { Facebook, FacebookFill, Instagram, InstagramFill, LinkedIn, LinkedInFill, LocationSvg, Youtube, YoutubeFill } from "./svg";
+type Props = {};
 
-// The revamp design shows only the brand + registration row; the link row keeps
-// pages that left the main nav (About Us, People, legal, 80G tax forms) reachable.
-const links = [
-  { label: "About Us", href: "/aboutus" },
-  { label: "People", href: "/people" },
-  { label: "Blogs & Reports", href: "/blogsreports" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Use", href: "/termsofuse" },
-  { label: "Tax Forms", href: "/taxforms" },
-];
-
-const socials = [
-  { label: "Instagram", href: "https://www.instagram.com/opengradfoundation", Icon: FaInstagram },
-  { label: "YouTube", href: "https://www.youtube.com/@OpenGradFoundation", Icon: FaYoutube },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/opengrad-foundation/", Icon: FaLinkedinIn },
-];
-
-export const Footer = () => (
-  <footer className={styles.footer} data-section="footer">
-    <div className={styles.main}>
-      <div>
-        <div className={styles.brand}>OpenGrad</div>
-        <div className={styles.tagline}>Educate. Elevate. Empower.</div>
-      </div>
-      <div className={styles.reg}>
-        Section 8 · 12A &amp; 80G · Incubated by NSRCEL IIM Bangalore and The/Nudge Institute
-        <div className={styles.contact}>
-          <Link to="/contact">Contact Us</Link> · {CONTACT_EMAIL}
+export const Footer = (_props: Props) => {
+  return (
+    <div className={styles.FooterWrapper}>
+      <div className={styles.TopSection}>
+        <img src={logo} alt="" />
+        <p>OpenGrad’s journey is fueled by compassion and empowerment.</p>
+        <p>
+          Contact us : <a href="mailto:admin@opengrad.in">admin@opengrad.in</a>
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
+            alignItems: "center",
+            marginTop: "10px",
+          }}
+        >
+          <LocationSvg />{" "}
+          <p>
+            2/400/B, Firdouse House,
+            <br />
+            Chathamangalam,Kozhikode-673601
+          </p>
         </div>
       </div>
-    </div>
-    <div className={styles.sub}>
-      <nav aria-label="Footer" className={styles.links}>
-        {links.map((l) => (
-          <Link key={l.href} to={l.href}>
-            {l.label}
-          </Link>
-        ))}
-      </nav>
-      <div className={styles.socials}>
-        {socials.map(({ label, href, Icon }) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
-            <Icon />
+      <div className={styles.BottomSection}>
+        <div className={styles.left}>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/termsofuse">Terms of Use</a>
+          <a href="/taxforms">Tax Forms</a>
+          <a href="/newletters&reports">Newsletters & Reports</a>
+        </div>
+        <div className={styles.Social}>
+          <a href="" target="_blank" className={styles.iconLink}>
+            <Facebook className={styles.iconDefault} />
+            <FacebookFill className={styles.iconFill} />
           </a>
-        ))}
+          <a
+            href="https://www.instagram.com/opengradfoundation"
+            target="_blank"
+            className={styles.iconLink}
+          >
+            <Instagram className={styles.iconDefault} />
+            <InstagramFill className={styles.iconFill} />
+          </a>
+          <a
+            href="https://www.youtube.com/@OpenGradFoundation"
+            target="_blank"
+            className={styles.iconLink}
+          >
+            <Youtube className={styles.iconDefault} />
+            <YoutubeFill className={styles.iconFill} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/opengrad-foundation/"
+            target="_blank"
+            className={styles.iconLink}
+          >
+            <LinkedIn className={styles.iconDefault} />
+            <LinkedInFill className={styles.iconFill} />
+          </a>
+        </div>
+        <p>
+          © Copyright 2024 | Crafted by{" "}
+          <a
+            className={styles.Copyright}
+            href="https://fundesign.in"
+            target="_blank"
+          >
+            Fun Designs
+          </a>
+        </p>
       </div>
     </div>
-  </footer>
-);
+  );
+};

@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { Footer } from "../../Components/Footer/Footer";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { NewsletterBand } from "../../Components/NewsletterBand/NewsletterBand";
+import { OurPartners } from "../../Components/OurPartners/OurPartners";
 import { DONATE_URL } from "../../Components/siteLinks";
+import { OurWorks } from "./Components/OurWorks/OurWorks";
 import { Journey } from "./sections/Journey";
 import styles from "./Home.module.css";
 import heroImage from "../../assets/revamp/home/opengrad-students-and-mentors-holding-up-phones-at-a-communi.webp";
@@ -251,6 +253,8 @@ export const Home = () => (
         </div>
       </div>
     </section>
+    <OurWorks />
+    <OurPartners />
     <NewsletterBand />
     <Footer />
   </div>
