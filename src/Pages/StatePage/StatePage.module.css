@@ -693,6 +693,12 @@
   .stat {
     padding: 18px 10px;
   }
+  .stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 7px);
+  }
   .stat > div {
     font-size: 32px;
   }

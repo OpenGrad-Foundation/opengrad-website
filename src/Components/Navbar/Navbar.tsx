@@ -152,7 +152,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, links }) => {
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           gap: "2px",
         }}
       >
