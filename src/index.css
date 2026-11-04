@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap");
 
 :root {
+  --og-header-h: 77px;
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -56,4 +57,9 @@ h6 {
 
 input::placeholder {
   font-family: "Raleway";
+}
+
+/* In-page anchors (e.g. /home#get-involved) clear the fixed navbar. */
+[id] {
+  scroll-margin-top: var(--og-header-h);
 }

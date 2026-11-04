@@ -104,8 +104,16 @@
   gap: 5px;
   height: calc(100vh);
   width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
   justify-content: space-around;
   padding: 20px;
+  text-align: left;
+}
+
+.navbarMobile>div>a {
+  text-align: left;
+  width: 100%;
 }
 
 .navbarMobile>div>a>p {
@@ -113,6 +121,7 @@
   font-size: 17px;
   font-weight: 600;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .navbarMobile>div>button>a {
@@ -168,24 +177,24 @@
   width: 100%;
   border: none;
   box-shadow: none;
-  justify-self: center;
   margin-top: 10px;
   background: transparent;
-  padding: 0;
+  padding: 0 0 0 16px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .navbarMobile .dropdownMenu a {
   color: #696969;
   background: none;
   padding: 8px 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   border-radius: 0;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 1250px) {

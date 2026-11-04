@@ -86,8 +86,9 @@
     }
   </style>
   <script>
-    $(window).load(function () {
-      $('#overlay').hide();
+    // Module scripts have run at DOMContentLoaded; third-party requests need not block the page.
+    window.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('overlay').style.display = 'none';
     });
   </script>
 </head>

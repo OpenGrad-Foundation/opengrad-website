@@ -1,19 +1,1139 @@
-.HomePageWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.page {
+  padding-top: var(--og-header-h);
+  font-family: Raleway, system-ui, sans-serif;
+  color: #1f2a2c;
+  background: #fff;
+  line-height: normal;
+  color-scheme: light;
+  text-align: left;
 }
 
-.redirectbtn {
-  width: fit-content;
-  align-self: center;
-  padding: 15px  30px;
-  border-radius: 8px;
-  color: #ffffff;
-  font-weight: 500;
+/* The board uses a 1240px content box plus 32px gutters on either side. */
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+/* Keep the sans-serif fallback when the global !important font rule applies. */
+.page :is(button, p, a, h1, h2, h3, h4, h5, h6) {
+  font-family: Raleway, system-ui, sans-serif !important;
+}
+
+.page input::placeholder {
+  font-family: Raleway, system-ui, sans-serif;
+}
+
+.page img {
+  display: block;
+}
+
+.page a:focus-visible {
+  outline: 3px solid #209379;
+  outline-offset: 5px;
+}
+
+.hero {
+  padding: 44px 32px 0;
+  background: linear-gradient(90deg, #2f7472 0%, #1d4e5a 100%);
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  margin: 0 auto 22px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.18;
+}
+
+.hero h1 span {
+  border-bottom: 5px solid #8ef0b5;
+}
+
+.hero > img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero > p {
+  max-width: 1109px;
+  margin: 0 auto;
+  padding: 32px 0 21px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.numbers {
+  padding-top: 48px;
+  padding-bottom: 36px;
+}
+
+.numbersRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-right: 30px;
+}
+
+.stateCount {
+  text-align: center;
+}
+
+.maps {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.maps img {
+  height: 64px;
+  width: auto;
+  margin: 0 auto 6px;
+}
+
+.maps > div {
+  font-size: 13px;
+  font-weight: 600;
+  color: #034852;
+}
+
+.stateCount > p {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 62px;
+  text-align: center;
+}
+
+.stat::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 64px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3aa864;
+}
+
+.stat strong {
+  font-weight: 800;
+  font-size: 44px;
+  color: #2fa65e;
+}
+
+.stat p {
+  font-size: 16px;
+  max-width: 190px;
+  margin: 0 auto;
+}
+
+.eyebrow {
   font-size: 14px;
-  background-color: #00272D;
-  cursor: pointer;
-  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #209379;
+}
+
+.problem {
+  background: #f3f7f7;
+}
+
+.problemInner {
+  padding-top: 76px;
+  padding-bottom: 76px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 72px;
+  align-items: center;
+}
+
+.problemCopy {
+  flex: 1 1 500px;
+  min-width: 0;
+}
+
+.problemCopy .eyebrow {
+  margin-bottom: 12px;
+}
+
+.problemCopy h2 {
+  margin: 0 0 20px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #034852;
+}
+
+.problemCopy > p:last-child {
+  font-size: 19px;
+  line-height: 1.65;
+  color: #3e4b4e;
+}
+
+.problemGraphic {
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.problemStat {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 22px;
+  color: #034852;
+}
+
+.problemStat strong {
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.problemStat p {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.problemStat span {
+  color: #209379;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 520px;
+}
+
+.people svg {
+  display: block;
+  width: 100%;
+  fill: #c9d8d6;
+}
+
+.people .enrolled {
+  fill: #0abe62;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #4f5f63;
+}
+
+.legend span::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #c9d8d6;
+  margin-right: 8px;
+  vertical-align: -1px;
+}
+
+.legend span:last-child::before {
+  background: #0abe62;
+}
+
+.source {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #6b7a7d;
+}
+
+.journey {
+  padding-top: 64px;
+  padding-bottom: 70px;
+}
+
+.journeyIntro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.journeyIntro .eyebrow {
+  margin-bottom: 8px;
+}
+
+.journeyIntro h2 {
+  margin: 0 0 12px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #034852;
+}
+
+.journeyIntro > p:last-child {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3e4b4e;
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px 16px;
+  margin-bottom: 28px;
+}
+
+.stages > div {
+  grid-column: span 2;
+  padding: 10px 8px;
+  border-radius: 999px;
+  background: #a6db74;
+  color: #034852;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.stages > div:nth-child(2) {
+  background: #0abe62;
+  color: #fff;
+}
+
+.stages > div:last-child {
+  grid-column: span 1;
+  background: #034852;
+  color: #fff;
+}
+
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, #a6db74, #0abe62, #034852);
+  border-radius: 2px;
+}
+
+.step {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.stepIcon {
+  box-sizing: content-box;
+  position: relative;
+  z-index: 1;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+  border: 4px solid #a6db74;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.step:nth-child(3) .stepIcon, .step:nth-child(4) .stepIcon {
+  border-color: #0abe62;
+}
+
+.step:last-child .stepIcon {
+  border-color: #034852;
+}
+
+.stepIcon span {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #034852;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.step h3 {
+  margin: 18px 0 8px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #034852;
+}
+
+/* Let the longest label use the gap between journey columns. */
+.step:nth-child(4) h3 {
+  margin-right: -12px;
+}
+
+.step p {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #4f5f63;
+}
+
+.mobileStage {
+  display: none;
+}
+
+.hub {
+  margin-top: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #034852;
+}
+
+.hubCopy {
+  flex: 1 1 640px;
+  min-width: 0;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hubCopy .eyebrow {
+  font-size: 13px;
+  color: #a6db74;
+}
+
+.hubCopy h3 {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.hubCopy > p:last-child {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #d7ecea;
+}
+
+.hub > img {
+  flex: 1 1 440px;
+  min-width: 0;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+/* Natural card height with the board's compact lower spacing. */
+.states {
+  padding-top: 60px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.states h2 {
+  margin: 0 0 16px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+}
+
+.statesIntro {
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3e4b4e;
+}
+
+.stateCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  text-align: left;
+}
+
+.stateCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #7fd8a8;
+}
+
+.stateCard > img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.stateCardCopy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+}
+
+.stateCardCopy .stateName {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #2c8a50;
+  text-transform: uppercase;
+}
+
+.stateCard h3 {
+  margin: 6px 0 8px;
+  font-weight: 700;
+  font-size: 23px;
+  color: #1d4b55;
+}
+
+.stateCardCopy > p:not(.stateName), .learnMore {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #3e4b4e;
+}
+
+/* Pinned to the card bottom so all three line up, as in the PDF. */
+.learnMore {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+}
+
+.voices, .getInvolved {
+  background: #fff;
+}
+
+.voicesInner {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.voices h2 {
+  margin: 0 0 40px;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.1;
+  color: #034852;
+}
+
+.studentVoice {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(115deg, #034852 0%, #034852 45%, #022f36 100%);
+  margin: 0 0 56px;
+}
+
+.studentVoice > img {
+  flex: 0 1 380px;
+  min-width: 0;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.studentCopy {
+  flex: 1 1 616px;
+  min-width: 0;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quoteMark {
+  font-family: Georgia, serif;
+  font-size: 110px;
+  line-height: 0.6;
+  height: 46px;
+  color: rgb(166 219 116 / 45%);
+}
+
+.studentCopy .eyebrow {
+  font-size: 13px;
+  color: #a6db74;
+}
+
+.studentCopy blockquote {
+  margin: 12px 0 0;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.studentCopy figcaption {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #d7ecea;
+}
+
+.studentCopy strong {
+  color: #fff;
+}
+
+.advisorsTitle {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 38px;
+  color: #209379;
+}
+
+.advisors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.advisors figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.advisors img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 50%;
+  background: #f3f7f7;
+}
+
+.advisors blockquote {
+  margin: 20px 0 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #034852;
+  flex-grow: 1;
+}
+
+.advisors figcaption {
+  padding-top: 12px;
+  border-top: 2px solid #034852;
+}
+
+.advisors strong {
+  font-size: 17px;
+  font-weight: 700;
+  color: #034852;
+}
+
+.advisors figcaption p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #4f5f63;
+}
+
+.involvedInner {
+  padding-top: 60px;
+  padding-bottom: 64px;
+}
+
+.involvedHeading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.involvedHeading .eyebrow {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.involvedHeading h2 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #034852;
+}
+
+.involvedHeading > p {
+  font-size: 17px;
+  color: #3e4b4e;
+}
+
+.involvedHeading a {
+  color: #034852;
+  font-weight: 700;
+}
+
+.opportunities {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.opportunity {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #dce7e5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgb(3 72 82 / 6%);
+}
+
+.opportunity > img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.opportunityCopy {
+  padding: 20px 22px 22px;
+  border-top: 4px solid #0abe62;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.opportunity h3 {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #034852;
+}
+
+.opportunityCopy p {
+  margin-bottom: 16px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #3e4b4e;
+  flex-grow: 1;
+}
+
+.opportunityCopy span {
+  font-weight: 700;
+  font-size: 15px;
+  color: #209379;
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .problemInner {
+    gap: 40px;
+  }
+
+  .problemCopy, .problemGraphic {
+    flex-basis: 400px;
+  }
+
+  .problemStat strong {
+    font-size: 100px;
+  }
+
+  .step {
+    padding: 0 4px;
+  }
+
+  .step h3 {
+    font-size: 18px;
+  }
+
+  .step:nth-child(4) h3 {
+    margin-right: 0;
+  }
+
+  .states {
+    padding-bottom: 40px;
+  }
+
+  .hubCopy {
+    flex-basis: 50%;
+    padding: 30px;
+  }
+
+  .hub > img {
+    flex-basis: 40%;
+    height: auto;
+    min-height: 260px;
+  }
+
+  .stateCards {
+    gap: 18px;
+  }
+
+  .stateCardCopy {
+    padding: 20px 18px;
+  }
+
+  .stateCard h3 {
+    font-size: 21px;
+  }
+
+  .studentVoice > img {
+    flex-basis: 34%;
+    height: auto;
+  }
+
+  .studentCopy {
+    flex-basis: 60%;
+    padding: 36px 30px;
+  }
+
+  .studentCopy blockquote {
+    font-size: 27px;
+  }
+
+  .advisors {
+    gap: 24px;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .hero {
+    padding: 36px 20px 24px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  .hero > img {
+    height: 280px;
+  }
+
+  .hero > p {
+    padding: 24px 0 0;
+    font-size: 18px;
+  }
+
+  .numbers {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .numbersRow {
+    gap: 24px;
+    padding-right: 0;
+  }
+
+  .stateCount {
+    width: 100%;
+  }
+
+  .stat {
+    padding-left: 0;
+    flex: 1;
+  }
+
+  .stat::before {
+    display: none;
+  }
+
+  .stat + .stat {
+    border-left: 2px solid #3aa864;
+    padding-left: 16px;
+  }
+
+  .stat strong {
+    font-size: 38px;
+  }
+
+  .problemInner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .problemCopy h2 {
+    font-size: 38px;
+  }
+
+  .problemCopy > p:last-child {
+    font-size: 17px;
+  }
+
+  .problemStat strong {
+    font-size: 92px;
+  }
+
+  .problemStat p {
+    font-size: 19px;
+  }
+
+  .people {
+    gap: 6px;
+  }
+
+  .journey {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .journeyIntro {
+    margin-bottom: 32px;
+  }
+
+  .journeyIntro h2 {
+    font-size: 36px;
+  }
+
+  .journeyIntro > p:last-child {
+    font-size: 17px;
+  }
+
+  .stages {
+    display: none;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .steps::before {
+    top: 0;
+    bottom: 0;
+    left: 36px;
+    right: auto;
+    width: 4px;
+    height: auto;
+    background: linear-gradient(#a6db74, #0abe62, #034852);
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .stepIcon {
+    flex-shrink: 0;
+    width: 68px;
+    height: 68px;
+    margin: 0;
+  }
+
+  .stepIcon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .stepIcon span {
+    width: 26px;
+    height: 26px;
+    right: -5px;
+  }
+
+  .stepCopy {
+    padding-top: 2px;
+  }
+
+  .mobileStage {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #209379;
+  }
+
+  .step h3 {
+    margin: 6px 0 8px;
+    font-size: 20px;
+  }
+
+  .hub {
+    margin-top: 36px;
+  }
+
+  .hubCopy {
+    flex-basis: 100%;
+    padding: 28px 24px;
+  }
+
+  .hubCopy h3 {
+    font-size: 26px;
+  }
+
+  .hub > img {
+    flex-basis: 100%;
+    height: 220px;
+    min-height: 0;
+  }
+
+  .states {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .states h2 {
+    font-size: 36px;
+  }
+
+  .statesIntro {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .stateCards, .advisors, .opportunities {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .stateCardCopy {
+    padding: 22px 24px;
+  }
+
+  .stateCard h3 {
+    font-size: 23px;
+  }
+
+  .stateCard .learnMore,
+  .stateCard:nth-child(2) .learnMore {
+    margin-top: 20px;
+  }
+
+  .voicesInner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .voices h2 {
+    font-size: 40px;
+    margin-bottom: 28px;
+  }
+
+  .studentVoice {
+    margin-bottom: 36px;
+  }
+
+  .studentVoice > img {
+    flex-basis: 100%;
+    height: 340px;
+  }
+
+  .studentCopy {
+    flex-basis: 100%;
+    padding: 34px 24px;
+  }
+
+  .studentCopy blockquote {
+    font-size: 26px;
+  }
+
+  .advisorsTitle {
+    font-size: 32px;
+  }
+
+  .advisors {
+    gap: 36px;
+  }
+
+  .advisors img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .advisors blockquote {
+    font-size: 17px;
+  }
+
+  .involvedInner {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .involvedHeading .eyebrow {
+    font-size: 20px;
+  }
+
+  .involvedHeading h2 {
+    font-size: 36px;
+  }
+
+  .involvedHeading > p {
+    line-height: 1.6;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero > img {
+    height: 230px;
+  }
+
+  .hero > p {
+    font-size: 17px;
+  }
+
+  .problemCopy h2 {
+    font-size: 34px;
+  }
+
+  .problemStat {
+    gap: 14px;
+  }
+
+  .problemStat strong {
+    font-size: 82px;
+  }
+
+  .problemStat p {
+    font-size: 18px;
+  }
+
+  .journeyIntro h2, .states h2, .involvedHeading h2 {
+    font-size: 32px;
+  }
+
+  .studentCopy blockquote {
+    font-size: 24px;
+  }
+
 }
