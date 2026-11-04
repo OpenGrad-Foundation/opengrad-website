@@ -3,6 +3,7 @@ import logo from "../../../loader.png";
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { IoMdClose, IoMdArrowDropdown } from "react-icons/io";
+import { STATE_PAGES } from "../siteLinks";
 
 type Props = {};
 
@@ -27,8 +28,8 @@ export const Navbar = (_props: Props) => {
     {
       label: "Program",
       dropdown: [
-        { label: "Govt Projects", href: "/govtprojects" },
         { label: "CAT Program", href: "/catprogram" },
+        ...STATE_PAGES,
       ],
     },
     // {
@@ -151,7 +152,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, links }) => {
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           gap: "2px",
         }}
       >
