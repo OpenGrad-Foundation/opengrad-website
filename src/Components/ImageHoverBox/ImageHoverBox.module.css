@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 25px;
-  height: 420px;
+  min-height: 420px;
+  height: auto;
 }
 .ImageHoverBoxWrap {
   display: flex;
@@ -50,7 +51,6 @@
   gap: 8px;
   width: 100%;
   flex: 1;
-  overflow: hidden;
 }
 .ImageHoverBoxWrapper .Content h2 {
   color: #034852;

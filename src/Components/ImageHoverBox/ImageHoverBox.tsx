@@ -22,7 +22,7 @@ export const ImageHoverBox = ({
 }: Props) => {
 
   return (
-    <div className={styles.ImageHoverBoxWrapper + " " + className}>
+    <div className={`${styles.ImageHoverBoxWrapper}${className ? ` ${className}` : ""}`}>
       <a
         href={linkedIn}
         target="_blank"
