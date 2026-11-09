@@ -1,21 +1,21 @@
-import { ImageHoverBox } from "../../../../Components/ImageHoverBox/ImageHoverBox"
+import { ImageHoverBox } from "../../../../Components/ImageHoverBox/ImageHoverBox";
 import SubHeadings from "../../../../Components/subHeadings";
 import sebbin from "../../../assets/founders/Sebbin.webp";
 import shahid from "../../../assets/founders/Shahid.webp";
 import sahil from "../../../assets/founders/Sahil.webp";
 import amith from "../../../assets/founders/Amith.webp";
-import styles from './FoundersSection.module.css'
+import styles from "./FoundersSection.module.css";
 
-type Props = {}
+type Props = {};
 
 export const FoundersSection = (_props: Props) => {
   return (
     <div className={styles.FoundersSection}>
-      <div style={{display:"flex", gap:"1ch"}}>
-      <SubHeadings text="THE FOUNDERS" />
-      <SubHeadings text="" variant="secondary" />
+      <div style={{ display: "flex", gap: "1ch" }}>
+        <SubHeadings text="THE FOUNDERS" />
+        <SubHeadings text="" variant="secondary" />
       </div>
-      
+
       <div className={styles.foundersContainer}>
         <ImageHoverBox
           image={sahil}
@@ -45,16 +45,23 @@ export const FoundersSection = (_props: Props) => {
           linkedIn="https://www.linkedin.com/in/shahidco/"
           variant="secondary"
         />
-         <ImageHoverBox
+      </div>
+
+      <div style={{ display: "flex", gap: "1ch" }}>
+        <SubHeadings text="Ex-Partners" />
+      </div>
+
+      <div className={styles.foundersContainer}>
+        <ImageHoverBox
           image={amith}
           name={"Amith Tony Joseph"}
           width={"300px"}
           height={"320px"}
-          description="MBA- ESMT BERLIN, ENTREPRENEUR, PRODUCT MANAGER AT THRYVE, BERLIN"
+          description="Co-founded Opengrad and led the organisation’s initial technological development. He holds an MBA from ESMT Berlin and is currently a Product Manager at Thryve, Berlin."
           linkedIn="https://www.linkedin.com/in/amith-tj/"
           variant="secondary"
         />
       </div>
     </div>
   );
-}
+};

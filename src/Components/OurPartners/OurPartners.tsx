@@ -3,14 +3,22 @@ import styles from "./OurPartners.module.css";
 import Marquee from "react-fast-marquee";
 import nudge from "./Partners/thenudge.png";
 import nsr from "./Partners/nsrcel.png";
-import Tycon from "./Partners/Tycoon.png";
 import eivolve from "./Partners/eivolve.png";
 import caringfriends from "./Partners/caringfriends.png";
 import formread from "./Partners/formread.png";
 import papersurvey from "./Partners/papersurvey.png";
 import google from "./Partners/googlefornonprofits.png";
-import tribalwelfare from "./Partners/tribalwelfare.png";
 import govtchattisgarh from "./Partners/govtchattisgarh.png";
+import govttamilnadu from "./Partners/govttamilnadu.webp";
+import govtkerala from "./Partners/govtkerala.webp";
+import changeengine from "./Partners/changeengine.webp";
+import enphase from "./Partners/enphase.webp";
+import indigoedge from "./Partners/indigoedge.webp";
+import indiawelfaretrust from "./Partners/indiawelfaretrust.webp";
+import thedelta from "./Partners/thedelta.webp";
+import tidelpark from "./Partners/tidelpark.webp";
+import svp from "./Partners/svp.webp";
+import dolphintank from "./Partners/dolphintank.webp";
 import SubHeadings from "../subHeadings";
 
 export const OurPartners = () => {
@@ -26,16 +34,96 @@ export const OurPartners = () => {
     {
       image: nsr,
       name: "NSRCEL",
-      name2: "IIM Bangalaore",
-      para: "Facilitating progress through vital mentoring support.",
+      name2: "IIM Bangalore",
+      para: "Facilitating progress through vital mentoring support.",
       scale: 1,
     },
     {
-      image: Tycon,
-      name: "Tycoonstory",
-      name2: "Media Partner",
-      para: "Tycoon story is one of the largest online network of Entrepreneurs & Startups",
-      link: "https://www.tycoonstory.com/",
+      image: govttamilnadu,
+      name: "Govt. of Tamil Nadu",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: govtkerala,
+      name: "Govt. of Kerala",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: govtchattisgarh,
+      name: "Govt. of Chhattisgarh",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1.2,
+    },
+    {
+      image: changeengine,
+      name: "ChangeEngine",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: enphase,
+      name: "Enphase",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: indigoedge,
+      name: "IndigoEdge",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: indiawelfaretrust,
+      name: "India Welfare Trust",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: thedelta,
+      name: "The Delta (Nudge)",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: tidelpark,
+      name: "TIDEL Park Limited",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: svp,
+      name: "SVP",
+      name2: "",
+      para: "",
+      link: "",
+      scale: 1,
+    },
+    {
+      image: dolphintank,
+      name: "Dolphin Tank – Season 5",
+      name2: "",
+      para: "",
+      link: "",
       scale: 1,
     },
     {
@@ -78,22 +166,6 @@ export const OurPartners = () => {
       link: "",
       scale: 1.5,
     },
-    {
-      image: tribalwelfare,
-      name: "Tribal Welfare Dept,",
-      name2: "Govt of Tamil Nadu",
-      para: "",
-      link: "",
-      scale: 1.2,
-    },
-    {
-      image: govtchattisgarh,
-      name: "Govt. of Chhattisgarh",
-      name2: "",
-      para: "",
-      link: "",
-      scale: 1.2,
-    },
   ];
 
   useEffect(() => {
@@ -122,8 +194,12 @@ export const OurPartners = () => {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                style={{ padding: "0px 38px", textAlign: "center" }}
-                onClick={() => window.open(partner.link)}
+                style={{ padding: "0px 38px", textAlign: "center", cursor: partner.link ? "pointer" : "default" }}
+                onClick={() => {
+                  if (partner.link) {
+                    window.open(partner.link, "_blank");
+                  }
+                }}
               >
                 <img src={partner.image} alt={partner.name} style={{ transform: `scale(${partner.scale})` }} />
                 <div className={styles.name}>

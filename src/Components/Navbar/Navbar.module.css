@@ -1,6 +1,7 @@
 .navbarWrapper {
   position: fixed;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +28,7 @@
 .navbarRight>div {
   display: flex;
   align-items: center;
-  gap: 4vw;
+  gap: clamp(14px, 2vw, 30px);
 }
 
 .navbarRight>div>a>p,
@@ -50,6 +51,7 @@
   font-weight: 600;
   margin: 0;
   border: none;
+  cursor: pointer;
 }
 
 .navbarWrapper .StudyButton a {

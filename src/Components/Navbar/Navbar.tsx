@@ -43,7 +43,7 @@ export const Navbar = (_props: Props) => {
     { label: "People", href: "/people" },
     // { label: "Advisory", href: "/ouradvisors" },
     { label: "Blogs & Reports", href: "/blogsreports" },
-
+    { label: "Contact Us", href: "/contact" },
   ];
 
 
@@ -79,9 +79,12 @@ export const Navbar = (_props: Props) => {
                     style={{
                       fontSize: "17px",
                       fontWeight: 600,
-                      color: window.location.href.includes(item.href)
-                        ? "#05B570"
-                        : "#696969",
+                      color:
+                        window.location.href.includes(item.href) ||
+                        (item.href === "/blogsreports" &&
+                          window.location.href.includes("/newletters&reports"))
+                          ? "#05B570"
+                          : "#696969",
                     }}
                   >
                     {item.label}
@@ -112,9 +115,12 @@ export const Navbar = (_props: Props) => {
                   <a href={item.href} key={i}>
                     <p
                       style={{
-                        color: window.location.href.includes(item.href)
-                          ? "#05B570"
-                          : "#696969",
+                        color:
+                          window.location.href.includes(item.href) ||
+                          (item.href === "/blogsreports" &&
+                            window.location.href.includes("/newletters&reports"))
+                            ? "#05B570"
+                            : "#696969",
                       }}
                     >
                       {item.label}

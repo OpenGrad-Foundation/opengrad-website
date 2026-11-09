@@ -26,30 +26,22 @@
   text-wrap: nowrap;
 }
 .inner .DetailWrapper {
-  height: calc(100% - 50px);
   width: 100%;
   padding: 8vh 5vw 0px 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3vw;
+  flex-wrap: wrap;
+  z-index: 10;
 }
 
-.inner .DetailWrapper > .Content {
-  width: calc(100%);
-  height: calc(100% - 0px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 30px;
-  min-width: 300px;
-}
-.inner .DetailWrapper > .Content .TopInner {
+.inner .DetailWrapper .TopInner {
   border-left: 5px solid #034852;
   margin-left: 1vw;
 }
-.inner .DetailWrapper > .Content .TopInner p {
+
+.inner .DetailWrapper .TopInner p {
   background-color: #05b570;
   text-transform: uppercase;
   width: fit-content;
@@ -58,8 +50,29 @@
   margin-left: 2px;
   color: white;
   font-weight: 800;
-  padding: 8px 3px;
-  line-height: 1;
+  padding: 0px 3px;
+  line-height: 1.2;
+}
+
+.inner .DetailWrapper .category {
+  display: flex;
+  gap: 25px;
+  z-index: 10;
+}
+
+.inner .DetailWrapper .category button {
+  background-color: transparent;
+  color: #667085;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.inner .DetailWrapper .category button:hover {
+  color: #05b570;
 }
 
 @media screen and (max-width: 1200px) {
@@ -68,21 +81,29 @@
     font-size: 25vw;
   }
   .inner .DetailWrapper {
-    flex-direction: column;
-    padding: 8vh 10vw 0px;
+    padding: 8vh 5vw 0px;
   }
-  .inner .DetailWrapper > .Content {
-    width: 100%;
-  }
-  .inner .DetailWrapper > .Content .TopInner {
+  .inner .DetailWrapper .TopInner {
     margin-left: 2vw;
   }
-  .inner .DetailWrapper > .Content .TopInner p {
+  .inner .DetailWrapper .TopInner p {
     font-size: 4.3vw;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+  .inner .DetailWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .inner .DetailWrapper .category {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
   .inner {
     padding: 80px 0px 30px;
   }
@@ -90,9 +111,16 @@
     padding: 8vh 5vw 20px;
     gap: 20px;
   }
-
-  .inner .DetailWrapper > .Content .TopInner p {
-    font-size: 5.4vw;
+  .inner .DetailWrapper .TopInner p {
+    font-size: 26px;
+  }
+  .inner .DetailWrapper .category {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .inner .DetailWrapper .category button {
+    font-size: 16px;
   }
 }
 
@@ -103,6 +131,8 @@
   justify-content: center;
   width: 100%;
   padding: 0px 5vw 6vh;
+  position: relative;
+  z-index: 10;
 }
 
 .newsletters h1,
@@ -116,6 +146,8 @@
   align-items: center;
   justify-content: center;
   max-width: 950px;
+  position: relative;
+  z-index: 10;
 }
 
 .yearHeader {
@@ -130,10 +162,16 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+  transition: background-color 0.2s ease;
 }
 
 .yearHeader:hover {
-  background: #f0fbf6;
+  background: rgba(240, 251, 246, 0.7);
 }
 
 .yearHeader > div.rotated {
@@ -145,17 +183,21 @@
   max-width: 100%;
   gap: 0px;
   border: 1px solid #82dab7;
+  position: relative;
+  z-index: 10;
 }
 
 .newsletters .gridSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0px;
+  position: relative;
+  z-index: 10;
 }
 
 .gridSection > a {
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   color: var(--Primary, #034852);
   font-size: 22px;
   font-weight: 700;
@@ -167,6 +209,7 @@
   border: 1px solid #82dab7;
   text-decoration: none;
   gap: 10px;
+  transition: all 0.2s ease;
 }
 
 .gridSection > a:hover {
@@ -180,6 +223,8 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 5vw 6vh;
+  position: relative;
+  z-index: 10;
 }
 .anualreports .gridSection {
   max-width: 950px;
@@ -188,6 +233,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
 .anualreports .gridItem {
@@ -195,12 +242,17 @@
   flex-direction: column;
   border: 1.884px solid #05b570;
   width: calc(50% - 1.5vw);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .anualreports .gridItem img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 913 / 662;
   object-fit: cover;
+  display: block;
 }
 .anualreports .gridSection a {
   color: #fff;
