@@ -5,15 +5,44 @@ import { deleteBlogs, getBlogs } from "./Api";
 import styles from "./OurBlog.module.css";
 import { useState, useEffect } from "react";
 import sound from "./assets/sound.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { supabase } from "../../App";
+import { NewslettersAndReportsContent } from "../newsletterAndReports2/NewslettersAndReportsContent";
 
-export const OurBlog = () => {
+export const OurBlog = ({ initialTab }: { initialTab?: string } = {}) => {
+  const location = useLocation();
+
+  const getInitialCategory = () => {
+    const params = new URLSearchParams(location.search);
+    const catParam = params.get("category");
+    if (catParam) return catParam;
+    if (location.state?.category) return location.state.category;
+    if (initialTab) return initialTab;
+    return "Newsletters & Reports";
+  };
+
   const [data, setData] = useState<any[]>([]);
-  const [activeComponent, setActiveComponent] =
-    useState<string>("News and Updates");
+  const [activeComponent, setActiveComponent] = useState<string>(getInitialCategory);
+
+  useEffect(() => {
+    const onPopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get("category");
+      if (catParam) {
+        setActiveComponent(catParam);
+      } else {
+        setActiveComponent("Newsletters & Reports");
+      }
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  useEffect(() => {
+    setActiveComponent(getInitialCategory());
+  }, [initialTab, location.search, location.state?.category, location.pathname]);
   const [topBlogs, setTopBlogs] = useState<any[]>([]);
   const [count, setCount] = useState(6);
 
@@ -48,6 +77,10 @@ export const OurBlog = () => {
   };
   const datas = [
     {
+      name: "Newsletters & Reports",
+      value: "Newsletters & Reports",
+    },
+    {
       name: "News and Updates",
       value: "News and Updates",
     },
@@ -59,12 +92,19 @@ export const OurBlog = () => {
       name: "Campus Diaries",
       value: "Campus Diaries",
     },
-    // {
-    //   name: "Insights",
-    //   value: "Insights",
-    // },
   ];
   const navigate = useNavigate();
+
+  const handleTabClick = (value: string) => {
+    setActiveComponent(value);
+    const targetPath =
+      value === "Newsletters & Reports"
+        ? "/newletters&reports"
+        : `/blogsreports?category=${encodeURIComponent(value)}`;
+    if (window.location.pathname + window.location.search !== targetPath) {
+      window.history.pushState(null, "", targetPath);
+    }
+  };
 
   const detailBlogs = (id: any) => {
     navigate(`/detailedblog/${id}`);
@@ -88,73 +128,45 @@ export const OurBlog = () => {
       <div className={styles.HeaderWrapper}>
         <div className={styles.Header}>
           <div className={styles.BackgroundText}>
-            <h1>OUR BLOGS</h1>
+            <h1>
+              {activeComponent === "Newsletters & Reports"
+                ? "NEWSLETTERS & REPORTS"
+                : "OUR BLOGS"}
+            </h1>
           </div>
           <div className={styles.DetailWrapper}>
             <div className={styles.TopInner}>
-              <p>Our Blogs</p>
+              <p>
+                {activeComponent === "Newsletters & Reports"
+                  ? "Newsletters & Reports"
+                  : "Our Blogs"}
+              </p>
             </div>
             <div className={styles.category}>
               {datas.map(({ value }) => {
+                const isActive = activeComponent === value;
                 return (
                   <button
+                    key={value}
                     style={{
-                      color: activeComponent == value ? "#05B570" : "#667085",
+                      color: isActive ? "#05B570" : "#667085",
+                      fontWeight: isActive ? 700 : 500,
                     }}
-                    onClick={() => setActiveComponent(value)}
+                    onClick={() => handleTabClick(value)}
                   >
                     {value}
                   </button>
                 );
               })}
-              <button
-                style={{
-                  color: "#667085",
-                }}
-                onClick={() => navigate('/newletters&reports')}
-              >
-                Newsletters & Reports
-              </button>
             </div>
           </div>
         </div>
-        <div className={styles.topBlogs}>
-          {topBlogs
-            .slice(0, 1)
-            .map(
-              ({
-                id,
-                image,
-                author,
-                dateofblog,
-                title,
-                description,
-                category,
-              }) => {
-                const formattedDate = formatDate(dateofblog);
-                return (
-                  <div
-                    className={styles.mainblog}
-                    onClick={() => detailBlogs(id)}
-                  >
-                    <img src={image} alt="" />
-                    <p className={styles.author}>
-                      {author} • {formattedDate}
-                    </p>
-                    <h3>{title}</h3>
-                    <p>
-                      {description.length > 150
-                        ? `${description.slice(0, 150)}...`
-                        : description}
-                    </p>
-                    <CategoryDivContainer category={category} />
-                  </div>
-                );
-              }
-            )}
-          <div className={styles.rightDiv}>
+        {activeComponent === "Newsletters & Reports" ? (
+          <NewslettersAndReportsContent />
+        ) : (
+          <div className={styles.topBlogs}>
             {topBlogs
-              .slice(1, 3)
+              .slice(0, 1)
               .map(
                 ({
                   id,
@@ -167,64 +179,101 @@ export const OurBlog = () => {
                 }) => {
                   const formattedDate = formatDate(dateofblog);
                   return (
-                    <div onClick={() => detailBlogs(id)}>
+                    <div
+                      className={styles.mainblog}
+                      onClick={() => detailBlogs(id)}
+                    >
                       <img src={image} alt="" />
-                      <div>
-                        <p className={styles.author}>
-                          {author} • {formattedDate}
-                        </p>
-                        <h3>{title}</h3>
-                        <p>
-                          {description.length > 100
-                            ? `${description.slice(0, 100)}...`
-                            : description}
-                        </p>
-                        <CategoryDivContainer category={category} />
-                      </div>
+                      <p className={styles.author}>
+                        {author} • {formattedDate}
+                      </p>
+                      <h3>{title}</h3>
+                      <p>
+                        {description.length > 150
+                          ? `${description.slice(0, 150)}...`
+                          : description}
+                      </p>
+                      <CategoryDivContainer category={category} />
                     </div>
                   );
                 }
               )}
+            <div className={styles.rightDiv}>
+              {topBlogs
+                .slice(1, 3)
+                .map(
+                  ({
+                    id,
+                    image,
+                    author,
+                    dateofblog,
+                    title,
+                    description,
+                    category,
+                  }) => {
+                    const formattedDate = formatDate(dateofblog);
+                    return (
+                      <div onClick={() => detailBlogs(id)}>
+                        <img src={image} alt="" />
+                        <div>
+                          <p className={styles.author}>
+                            {author} • {formattedDate}
+                          </p>
+                          <h3>{title}</h3>
+                          <p>
+                            {description.length > 100
+                              ? `${description.slice(0, 100)}...`
+                              : description}
+                          </p>
+                          <CategoryDivContainer category={category} />
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+            </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.allBlogs}>
-        <h1>All Blogs</h1>
-        <div className={styles.blogWrapper}>
-          {[...data]
-            .slice(0, count)
-            .map(
-              ({
-                id,
-                image,
-                author,
-                dateofblog,
-                title,
-                description,
-                category,
-              }) => {
-                return (
-                  <IndividualBlogContainer
-                    id={id}
-                    image={image}
-                    title={title}
-                    author={author}
-                    description={description}
-                    dateofblog={dateofblog}
-                    category={category}
-                    editable={false}
-                  />
-                );
-              }
-            )}
-        </div>
-        {count >= data.length ? (
-          <button onClick={handleCountBack}>Show Less</button>
-        ) : (
-          <button onClick={handleCount}>View More</button>
         )}
       </div>
-      <BannerOFBlog />
+      {activeComponent !== "Newsletters & Reports" && (
+        <div className={styles.allBlogs}>
+          <h1>All Blogs</h1>
+          <div className={styles.blogWrapper}>
+            {[...data]
+              .slice(0, count)
+              .map(
+                ({
+                  id,
+                  image,
+                  author,
+                  dateofblog,
+                  title,
+                  description,
+                  category,
+                }) => {
+                  return (
+                    <IndividualBlogContainer
+                      id={id}
+                      image={image}
+                      title={title}
+                      author={author}
+                      description={description}
+                      dateofblog={dateofblog}
+                      category={category}
+                      editable={false}
+                    />
+                  );
+                }
+              )}
+          </div>
+          {count >= data.length ? (
+            <button onClick={handleCountBack}>Show Less</button>
+          ) : (
+            <button onClick={handleCount}>View More</button>
+          )}
+        </div>
+      )}
+      {activeComponent !== "Newsletters & Reports" && <BannerOFBlog />}
       <Footer />
     </div>
   );
@@ -353,6 +402,8 @@ export const CategoryDivContainer = ({
 };
 
 export const BannerOFBlog = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.bannerSection}>
       <div className={styles.LeftSection}>
@@ -366,12 +417,10 @@ export const BannerOFBlog = () => {
             and events.
           </p>
           <button
-            onClick={() =>
-              window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSfZtsL0-tXcs0pbRfaTE3FnanKNppiab0zAv8dOqBm0aMUzfQ/viewform",
-                "_blank"
-              )
-            }
+            onClick={() => {
+              navigate("/contact?topic=volunteer");
+              window.scrollTo(0, 0);
+            }}
           >
             <p>Join Us</p>
             <ArrowRight color="rgba(3, 72, 82, 1)" />

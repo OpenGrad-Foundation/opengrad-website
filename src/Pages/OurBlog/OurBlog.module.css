@@ -23,6 +23,8 @@
   z-index: 0;
   top: 0;
   left: 0;
+  pointer-events: none;
+  user-select: none;
 }
 .HeaderWrapper .BackgroundText h1 {
   font-size: 17vw;
@@ -30,13 +32,15 @@
   opacity: 0.06;
   margin-top: 50px;
   font-weight: 900;
+  pointer-events: none;
+  user-select: none;
 }
 .HeaderWrapper .Header {
   width: 100%;
 }
 .HeaderWrapper .DetailWrapper {
-  height: calc(100% - 50px);
   width: 100%;
+  padding: 8vh 5vw 0px 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,41 +51,64 @@
 .HeaderWrapper .DetailWrapper .TopInner {
   border-left: 5px solid #034852;
   margin-left: 1vw;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
 }
 .HeaderWrapper .DetailWrapper .TopInner p {
   background-color: #05b570;
   text-transform: uppercase;
   width: fit-content;
   height: fit-content;
-  font-size: 3vw;
+  font-size: clamp(20px, 2.2vw, 32px);
   line-height: 1.2;
   margin-left: 2px;
   color: white;
   font-weight: 800;
-  padding: 0px 3px;
+  padding: 2px 6px;
+  white-space: nowrap;
 }
 
 .HeaderWrapper .DetailWrapper .category {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   z-index: 10;
+  align-items: center;
 }
-@media screen and (max-width: 550px) {
-  .HeaderWrapper .DetailWrapper .TopInner p {
-    font-size: 30px;
+@media screen and (max-width: 900px) {
+  .HeaderWrapper .DetailWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
   .HeaderWrapper .DetailWrapper .category {
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 550px) {
+  .HeaderWrapper .DetailWrapper .TopInner p {
+    font-size: 24px;
+  }
+  .HeaderWrapper .DetailWrapper .category {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
   }
 }
 .HeaderWrapper .DetailWrapper .category button {
   background-color: transparent;
-  color: rgba(3, 72, 82, 1);
+  color: #667085;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.HeaderWrapper .DetailWrapper .category button:hover {
+  color: #05b570;
 }
 
 .HeaderWrapper .topBlogs {

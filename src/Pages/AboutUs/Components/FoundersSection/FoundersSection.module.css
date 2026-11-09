@@ -17,6 +17,8 @@
   justify-content: space-around;
 }
 
-.FoundersSection > div >div{
-    max-width: 300px;
+.FoundersSection > div > div {
+  max-width: 300px;
+  height: auto;
+  min-height: 420px;
 }
