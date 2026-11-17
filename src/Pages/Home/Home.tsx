@@ -5,8 +5,9 @@ import { NewsletterBand } from "../../Components/NewsletterBand/NewsletterBand";
 import { OurPartners } from "../../Components/OurPartners/OurPartners";
 import { DONATE_URL } from "../../Components/siteLinks";
 import { Journey } from "./sections/Journey";
+import { Solution } from "./sections/Solution";
 import styles from "./Home.module.css";
-import heroImage from "../../assets/revamp/home/opengrad-students-and-mentors-holding-up-phones-at-a-communi.webp";
+import heroImage from "../../assets/revamp/home/opengrad-hero-cuddalore.webp";
 import tamilNaduMap from "../../assets/revamp/home/map-of-tamil-nadu.webp";
 import chhattisgarhMap from "../../assets/revamp/home/map-of-chhattisgarh.webp";
 import keralaMap from "../../assets/revamp/home/map-of-kerala.webp";
@@ -104,7 +105,7 @@ export const Home = () => (
     <Navbar />
     <section data-section="hero" className={styles.hero}>
       <h1>Building a <span>Career Layer</span> for India’s Public Education System</h1>
-      <img src={heroImage} alt="OpenGrad students and mentors holding up phones at a community event" />
+      <img src={heroImage} alt="Class 12 students in a Cuddalore classroom during an OpenGrad session" />
       <p>
         OpenGrad builds the missing career layer in schools, working alongside governments to create a public
         education system that supports every student’s journey from school to college.
@@ -169,6 +170,8 @@ export const Home = () => (
         </div>
       </div>
     </section>
+
+    <Solution />
 
     <Journey />
 
