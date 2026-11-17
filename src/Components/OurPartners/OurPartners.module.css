@@ -30,6 +30,7 @@
 .Partners .PartnersImageWrapper img {
   height: 100px !important;
   object-fit: contain;
+  margin: 0 auto; /* Home's `.page img { display: block }` defeats text-align centering */
   padding: 0px 0px 10px;
   flex-shrink: 0;
   max-width: 240px;
