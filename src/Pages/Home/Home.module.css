@@ -403,6 +403,26 @@
   display: none;
 }
 
+.roleModels {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.roleModels h2 {
+  margin: 0 0 16px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #034852;
+}
+
+.roleModels p {
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1f2a2c;
+}
+
 .hub {
   margin-top: 44px;
   display: flex;
@@ -982,6 +1002,18 @@
   .step h3 {
     margin: 6px 0 8px;
     font-size: 20px;
+  }
+
+  .roleModels {
+    margin-top: 44px;
+  }
+
+  .roleModels h2 {
+    font-size: 28px;
+  }
+
+  .roleModels p {
+    font-size: 17px;
   }
 
   .hub {
