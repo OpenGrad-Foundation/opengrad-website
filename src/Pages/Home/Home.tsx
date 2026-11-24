@@ -5,7 +5,7 @@ import { NewsletterBand } from "../../Components/NewsletterBand/NewsletterBand";
 import { OurPartners } from "../../Components/OurPartners/OurPartners";
 import { DONATE_URL } from "../../Components/siteLinks";
 import { Journey } from "./sections/Journey";
-import { Solution } from "./sections/Solution";
+// import { Solution } from "./sections/Solution"; // re-enable with <Solution /> below
 import styles from "./Home.module.css";
 import heroImage from "../../assets/revamp/home/opengrad-hero-classroom.webp";
 import tamilNaduMap from "../../assets/revamp/home/map-of-tamil-nadu.webp";
