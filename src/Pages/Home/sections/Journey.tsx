@@ -87,6 +87,15 @@ export const Journey = () => (
         </li>
       ))}
     </ol>
+    <div className={styles.roleModels}>
+      <h2>Relatable Role Models, Right in the Classroom</h2>
+      <p>
+        Our Fellows, mentors and faculty are all recent graduates from top-tier colleges: young, relatable, and just a
+        few steps ahead of the students they teach. They bring first-hand experience of the journey from classrooms to
+        leading campuses. They teach, mentor and guide students at every step. They don't just tell students what is
+        possible. They show them through their own journeys.
+      </p>
+    </div>
     <div className={styles.hub}>
       <div className={styles.hubCopy}>
         <p className={styles.eyebrow}>OUR PLATFORM · OPENGRAD HUB</p>
